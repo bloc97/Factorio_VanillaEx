@@ -409,6 +409,7 @@ tanksdat_item_vehi={
 {name="car-truck",icon="car-truck.png",order="b[personal-transport]-a[car]-a"},
 {name="car-amphi",icon="car-truck.png",order="b[personal-transport]-a[car]-b"},
 {name="tank-mb",icon="tank-mb.png",order="b[personal-transport]-b[tank]-e"},
+{name="seaplane_u1",icon="small-plane.png",order="b[personal-transport]-b[tank]-f"},
 }
 
 tanksdat_proj={
