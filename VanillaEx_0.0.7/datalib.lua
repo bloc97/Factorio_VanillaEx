@@ -1,7 +1,7 @@
 
 -- First entry in a table has ID 1, second has ID 2, ID 3, ID 4, etc.
 -- ID 0 is reserved for table size! DO NOT USE!
-modname="__Vanilla++__"
+modname="__VanillaEx__"
 iconpath=modname.."/graphics/icons/"
 
 
