@@ -447,28 +447,28 @@ data:extend(
           draw_as_shadow = true,
           direction_count = 64,
           --shift = {0.59375, 0.328125},
-		  shift = {0, 0},
+		  shift = {3, 3},
           max_advance = 1,
           stripes = util.multiplystripes(2,
           {
            
             {
-             filename = modname.."/graphics/entity/seaplane/seaplane_shadow_0.png",
+             filename = modname.."/graphics/entity/seaplane/seaplane_shadow_8.png",
              width_in_frames = 1,
              height_in_frames = 8,
             },
             {
-             filename = modname.."/graphics/entity/seaplane/seaplane_shadow_1.png",
+             filename = modname.."/graphics/entity/seaplane/seaplane_shadow_9.png",
              width_in_frames = 1,
              height_in_frames = 8,
             },
 			{
-             filename = modname.."/graphics/entity/seaplane/seaplane_shadow_2.png",
+             filename = modname.."/graphics/entity/seaplane/seaplane_shadow_10.png",
              width_in_frames = 1,
              height_in_frames = 8,
             },
 			{
-             filename = modname.."/graphics/entity/seaplane/seaplane_shadow_3.png",
+             filename = modname.."/graphics/entity/seaplane/seaplane_shadow_11.png",
              width_in_frames = 1,
              height_in_frames = 8,
             },
@@ -704,7 +704,7 @@ data:extend(
           draw_as_shadow = true,
           direction_count = 64,
           --shift = {0.59375, 0.328125},
-		  shift = {0, 0},
+		  shift = {0, 0.328125},
           max_advance = 1,
           stripes = util.multiplystripes(2,
           {
@@ -960,7 +960,7 @@ data:extend(
           draw_as_shadow = true,
           direction_count = 64,
           --shift = {0.59375, 0.328125},
-		  shift = {0, 0},
+		  shift = {0, 0.328125},
           max_advance = 1,
           stripes = util.multiplystripes(2,
           {
