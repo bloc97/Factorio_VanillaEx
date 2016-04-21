@@ -1,416 +1,8 @@
 
 -- First entry in a table has ID 1, second has ID 2, ID 3, ID 4, etc.
 -- ID 0 is reserved for table size! DO NOT USE!
-modname="__VanillaEx__"
-iconpath=modname.."/graphics/icons/"
 
 
-tanksdat_vehi={-- Make sure entity and item have same table ID or icon will be wrong
-{name="tank-flame",-- Note name and result are all called in tanksdat_vehi[i].name!
-health=1000,
-resistances={15,75,15,30,50,60,15,30,10,20},
---(dec,%)    Fire  Phys  Impac Explo  Acid
-effectivity=0.6,
-burner_effectivity=0.75,
-fuel_inv_size=2,
-power="600kW",
-braking_power="400kW",
-friction=0.002,
-friction_mod=0.2,
-light_intensity=0.6, -- 0 to 1
-turret_speed=0.25, -- In rot/s
-rot_speed=0.0035,
-weight=22000,
-inv_size=80,
-guns={"tank-cannon-flame","tank-machine-gun"},
-collision=nil,
-},
-{name="tank-arty",
-health=800,
-resistances={15,50,15,30,50,30,15,30,10,20},
---(dec,%)    Fire  Phys  Impac Explo  Acid
-effectivity=0.6,
-burner_effectivity=0.75,
-fuel_inv_size=3,
-power="800kW",
-braking_power="400kW",
-friction=0.003,
-friction_mod=0.2, -- Terrain modifier
-light_intensity=0.6, -- 0 to 1
-turret_speed=0.15, -- In rot/s
-rot_speed=0.0020,
-weight=28000,
-inv_size=40,
-guns={"tank-cannon-arty","tank-machine-gun"},
-collision=nil,
-},
-{name="tank-auto",
-health=800,
-resistances={15,50,15,30,50,60,15,30,10,20},
---(dec,%)    Fire  Phys  Impac Explo  Acid
-effectivity=0.6,
-burner_effectivity=0.75,
-fuel_inv_size=2,
-power="500kW",
-braking_power="400kW",
-friction=0.0015,
-friction_mod=0.2,
-light_intensity=0.6, -- 0 to 1
-turret_speed=0.45, -- In rot/s
-rot_speed=0.0035,
-weight=18000,
-inv_size=60,
-guns={"tank-autocannon","tank-flakcannon"},
-collision=nil,
-},
-{name="car-armour",
-health=500,
-resistances={15,45,15,25,40,50,15,20,10,20},
---(dec,%)    Fire  Phys  Impac Explo  Acid
-effectivity=0.6,
-burner_effectivity=0.75,
-fuel_inv_size=2,
-power="400kW",
-braking_power="400kW",
-friction=0.0014,
-friction_mod=0.05,
-light_intensity=0.6, -- 0 to 1
-turret_speed=0.55, -- In rot/s
-rot_speed=0.0035,
-weight=15000,
-inv_size=40,
-guns={"car-gatling-gun","tank-machine-gun"},
-collision=nil,
-},
-{name="car-truck",
-health=600,
-resistances={05,05,05,10,20,30,10,10,5,10},
---(dec,%)    Fire  Phys  Impac Explo  Acid
-effectivity=0.6,
-burner_effectivity=0.75,
-fuel_inv_size=2,
-power="300kW",
-braking_power="200kW",
-friction=0.0010,
-friction_mod=0,
-light_intensity=0.9, -- 0 to 1
-turret_speed=0.35, -- In rot/s
-rot_speed=0.0035,
-weight=10000,
-inv_size=120,
-guns={},
-collision=nil,
-},
-{name="car-amphi",
-health=300,
-resistances={05,05,05,05,20,30,05,05,05,05},
---(dec,%)    Fire  Phys  Impac Explo  Acid
-effectivity=0.9,
-burner_effectivity=0.95,
-fuel_inv_size=1,
-power="150kW",
-braking_power="50kW",
-friction=0.002,
-friction_mod=1,
-light_intensity=0.9, -- 0 to 1
-turret_speed=0.35, -- In rot/s
-rot_speed=0.0015,
-weight=10000,
-inv_size=80,
-guns={},
-collision={"object-layer"},
-},
-{name="tank-mb",-- Note name and result are all called in tanksdat_vehi[i].name!
-health=1500,
-resistances={15,75,20,40,70,80,30,50,30,30},
---(dec,%)    Fire  Phys  Impac Explo  Acid
-effectivity=0.6,
-burner_effectivity=0.75,
-fuel_inv_size=4,
-power="1000kW",
-braking_power="500kW",
-friction=0.002,
-friction_mod=0.1,
-light_intensity=1, -- 0 to 1
-turret_speed=0.35, -- In rot/s
-rot_speed=0.0055,
-weight=30000,
-inv_size=80,
-guns={"tank-mb-cannon","tank-rocket"},
-collision=nil,
-},
-}
-tanksdat_vehi_anim={ -- Keep same table ID than tanksdat_vehi or sprites will be wrong.
-{-- tank-flame
-base={{filename = "__base__/graphics/entity/tank/base-1.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-2.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-3.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-4.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            }},
-turret={{filename = modname.."/graphics/entity/tank/turret-flame.png",
-          line_length = 8,
-          width = 92,
-          height = 69,
-          frame_count = 1,
-          direction_count = 64,
-          shift = {-0.15625, -1.07812},
-          animation_speed = 8,
-        },
-        {filename = "__base__/graphics/entity/tank/turret-mask.png",
-          line_length = 8,
-          width = 38,
-          height = 29,
-          frame_count = 1,
-          apply_runtime_tint = true,
-          direction_count = 64,
-          shift = {-0.15625, -1.23438},
-        },
-        {filename = "__base__/graphics/entity/tank/turret-shadow.png",
-          line_length = 8,
-          width = 95,
-          height = 67,
-          frame_count = 1,
-          draw_as_shadow = true,
-          direction_count = 64,
-          shift = {1.70312, 0.640625},
-        }},
-},
-{-- tank-arty
-base={{filename = "__base__/graphics/entity/tank/base-1.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-2.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-3.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-4.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            }},
-turret={{filename = modname.."/graphics/entity/tank/turret-flame.png",
-          line_length = 8,
-          width = 92,
-          height = 69,
-          frame_count = 1,
-          direction_count = 64,
-          shift = {-0.15625, -1.07812},
-          animation_speed = 8,
-        },
-        {filename = "__base__/graphics/entity/tank/turret-mask.png",
-          line_length = 8,
-          width = 38,
-          height = 29,
-          frame_count = 1,
-          apply_runtime_tint = true,
-          direction_count = 64,
-          shift = {-0.15625, -1.23438},
-        },
-        {filename = "__base__/graphics/entity/tank/turret-shadow.png",
-          line_length = 8,
-          width = 95,
-          height = 67,
-          frame_count = 1,
-          draw_as_shadow = true,
-          direction_count = 64,
-          shift = {1.70312, 0.640625},
-        }},
-},
-{-- tank-auto
-base={{filename = "__base__/graphics/entity/tank/base-1.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-2.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-3.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-4.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            }},
-turret={{filename = "__base__/graphics/entity/tank/turret.png",
-          line_length = 8,
-          width = 92,
-          height = 69,
-          frame_count = 1,
-          direction_count = 64,
-          shift = {-0.15625, -1.07812},
-          animation_speed = 8,
-        },
-        {
-          filename = "__base__/graphics/entity/tank/turret-mask.png",
-          line_length = 8,
-          width = 38,
-          height = 29,
-          frame_count = 1,
-          apply_runtime_tint = true,
-          direction_count = 64,
-          shift = {-0.15625, -1.23438},
-        },
-        {
-          filename = "__base__/graphics/entity/tank/turret-shadow.png",
-          line_length = 8,
-          width = 95,
-          height = 67,
-          frame_count = 1,
-          draw_as_shadow = true,
-          direction_count = 64,
-          shift = {1.70312, 0.640625},
-        }},
-},
-{-- car-armour
-base={{filename = "__base__/graphics/entity/tank/base-1.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-2.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-3.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-4.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            }},
-turret={{filename = "__base__/graphics/entity/car/car-turret.png",
-          line_length = 8,
-          width = 36,
-          height = 29,
-          frame_count = 1,
-          direction_count = 64,
-          shift = {-0.15625, -1.07812},
-          animation_speed = 8,
-        },
-        {
-          filename = "__base__/graphics/entity/car/car-turret-shadow.png",
-          line_length = 8,
-          width = 46,
-          height = 31,
-          frame_count = 1,
-          draw_as_shadow = true,
-          direction_count = 64,
-          shift = {1.70312, 0.640625},
-        }},
-},
-{-- car-truck
-base={{filename = "__base__/graphics/entity/tank/base-1.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-2.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-3.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-4.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            }},
-turret={},
-},
-{-- car-amphi
-base={{filename = "__base__/graphics/entity/tank/base-1.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-2.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-3.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-4.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            }},
-turret={},
-},
-{-- tank-mb
-base={{filename = "__base__/graphics/entity/tank/base-1.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-2.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-3.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            },
-            {filename = "__base__/graphics/entity/tank/base-4.png",
-             width_in_frames = 2,
-             height_in_frames = 16,
-            }},
-turret={{filename = "__base__/graphics/entity/tank/turret.png",
-          line_length = 8,
-          width = 92,
-          height = 69,
-          frame_count = 1,
-          direction_count = 64,
-          shift = {-0.15625, -1.07812},
-          animation_speed = 8,
-        },
-        {
-          filename = "__base__/graphics/entity/tank/turret-mask.png",
-          line_length = 8,
-          width = 38,
-          height = 29,
-          frame_count = 1,
-          apply_runtime_tint = true,
-          direction_count = 64,
-          shift = {-0.15625, -1.23438},
-        },
-        {
-          filename = "__base__/graphics/entity/tank/turret-shadow.png",
-          line_length = 8,
-          width = 95,
-          height = 67,
-          frame_count = 1,
-          draw_as_shadow = true,
-          direction_count = 64,
-          shift = {1.70312, 0.640625},
-        }},
-},
-}
-tanksdat_item_vehi={
-{name="tank-flame",icon="tank-flame.png",order="b[personal-transport]-b[tank]-c",},
-{name="tank-arty",icon="tank-arty.png",order="b[personal-transport]-b[tank]-d",},
-{name="tank-auto",icon="tank-auto.png",order="b[personal-transport]-b[tank]-b",},
-{name="car-armour",icon="car-armour.png",order="b[personal-transport]-b[tank]-a",},
-{name="car-truck",icon="car-truck.png",order="b[personal-transport]-a[car]-a"},
-{name="car-amphi",icon="car-truck.png",order="b[personal-transport]-a[car]-b"},
-{name="tank-mb",icon="tank-mb.png",order="b[personal-transport]-b[tank]-e"},
-{name="seaplane_u1",icon="small-plane.png",order="b[personal-transport]-b[tank]-f"},
-}
 
 tanksdat_proj={
 {name="autocannon-projectile",
@@ -688,7 +280,7 @@ energydat_item={
 {name="accumulator2",icon="accumulator2.png",order="e[accumulator]-a[solar-panel]-a"},
 }
 
-
+--[[
 wallsdat_entity={
 --{name="stone-wall",
 --health=500,
@@ -745,6 +337,8 @@ resist={
 
 },
 }
+--]]
+
 wallsdat_item={
 {name="iron-wall",order="a[wall]-a[stone-wall]-a",},
 {name="concrete-wall",order="a[wall]-a[stone-wall]-b",},
@@ -755,7 +349,7 @@ wallsdat_item={
 {name="composite-gate",order="a[wall]-b[gate]-c",},
 }
 
-gatesdat_entity={
+--[[gatesdat_entity={
 --{name="stone-gate",
 --health=500,
 --resist={
@@ -798,7 +392,7 @@ resist={
 
 },
 }
-
+--]]
 
 alldat_rec={
 ---- Tanks
@@ -836,9 +430,9 @@ ingredients={{"steel-plate", 5},{"plastic-bar", 2},{"explosives", 4},},
 {result="flakcannon-shell",energy=8,
 ingredients={{"steel-plate", 2},{"plastic-bar", 2},{"explosives", 5},},
 },
-{result="car-amphi",energy=0.5,
-ingredients={{"engine-unit", 10},{"iron-plate", 30},{"iron-gear-wheel", 40},},
-},
+--{result="car-amphi",energy=0.5,
+--ingredients={{"engine-unit", 10},{"iron-plate", 30},{"iron-gear-wheel", 40},},
+--},
 {result="tank-mb",
 energy=0.5, 
 ingredients={{"engine-unit", 26},{"steel-plate", 100},{"iron-gear-wheel", 50},{"processing-unit", 10},},
@@ -994,7 +588,7 @@ order="a-h-e",
 },
 {name="fluid-dynamics",icon=modname.."/graphics/technology/amphi.png",
 effects={
-		{type = "unlock-recipe",recipe = "car-amphi"},
+		--{type = "unlock-recipe",recipe = "car-amphi"},
 		},
 prereq={"automobilism","fluid-handling",},
 ingredients={{"science-pack-1", 1},{"science-pack-2", 1},},
@@ -1051,19 +645,14 @@ order="e-c-c-b",
 
 gunsdat_item_guns[0]=#gunsdat_item_guns
 gunsdat_item_ammo[0]=#gunsdat_item_ammo
---alldat_cat[0]=#alldat_cat
-
-
-tanksdat_item_vehi[0]=#tanksdat_item_vehi
-tanksdat_vehi[0]=#tanksdat_vehi
 tanksdat_proj[0]=#tanksdat_proj
 
 energydat_item[0]=#energydat_item
 
-wallsdat_entity[0]=#wallsdat_entity
+--wallsdat_entity[0]=#wallsdat_entity
 wallsdat_item[0]=#wallsdat_item
 
-gatesdat_entity[0]=#gatesdat_entity
+--gatesdat_entity[0]=#gatesdat_entity
 
 alldat_rec[0]=#alldat_rec
 alldat_tech[0]=#alldat_tech

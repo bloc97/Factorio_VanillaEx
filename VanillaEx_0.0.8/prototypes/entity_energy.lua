@@ -1,6 +1,55 @@
-data:extend(
-{
-{
+data:extend({
+
+  {
+    type = "solar-panel",
+    name = "high-density-solar",
+    icon = iconpath.."dense-solar.png",
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "high-density-solar"},
+    max_health = 100,
+    corpse = "big-remnants",
+    collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "solar"
+    },
+    picture =
+    {
+      filename = modname.."/graphics/entity/solar-panel/dense-solar.png",
+      priority = "high",
+      width = 104,
+      height = 96
+    },
+    production = "120kW"
+  },
+  {
+    type = "solar-panel",
+    name = "stacked-density-solar",
+    icon = iconpath.."stacked-solar.png",
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "stacked-density-solar"},
+    max_health = 100,
+    corpse = "big-remnants",
+    collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "solar"
+    },
+    picture =
+    {
+      filename = modname.."/graphics/entity/solar-panel/stacked-solar.png",
+      priority = "high",
+      width = 104,
+      height = 96
+    },
+    production = "400kW"
+  },
+  
+  {
     type = "accumulator",
     name = "accumulator2",
     icon = modname.."/graphics/icons/accumulator2.png",
@@ -65,6 +114,9 @@ data:extend(
       max_sounds_per_type = 5
     },
   },
- }
- 
- )
+  
+  
+  
+  
+  
+})

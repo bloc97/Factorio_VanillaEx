@@ -1,22 +1,4 @@
 local i
-for i=1,tanksdat_item_vehi[0] do
-data:extend(
-{
-  {
-    type = "item",
-    name = tanksdat_item_vehi[i].name,
-    icon = iconpath..tanksdat_item_vehi[i].icon,
-    flags = {"goes-to-quickbar"},
-    subgroup = "transport",
-    order = tanksdat_item_vehi[i].order,
-    place_result = tanksdat_item_vehi[i].name,
-    stack_size = 1
-  },
-}
-)
-end
-
-local i
 for i=1,energydat_item[0] do
 data:extend(
 {
@@ -51,3 +33,5 @@ data:extend(
 }
 )
 end
+
+
