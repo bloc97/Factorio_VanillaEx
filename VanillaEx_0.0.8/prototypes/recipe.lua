@@ -1,15 +1,15 @@
 local i
-for i=1,alldat_rec[0] do
+for i=1,master_recipe[0] do
 
 data:extend(
 {
   {
     type = "recipe",
-    name = alldat_rec[i].result,
+    name = master_recipe[i].result,
     enabled = false,
-    energy_required = alldat_rec[i].energy,
-    ingredients = alldat_rec[i].ingredients,
-    result = alldat_rec[i].result
+    energy_required = master_recipe[i].energy,
+    ingredients = master_recipe[i].ingredients,
+    result = master_recipe[i].result
   },
 
 }

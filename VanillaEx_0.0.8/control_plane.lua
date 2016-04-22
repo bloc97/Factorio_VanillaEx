@@ -1,6 +1,3 @@
-require "defines"
-require "util"
-
 global.entitynames={"seaplane","bomber"}
 global.seaplanevalues={0.22, 0.3, 90}
 global.seaplanevalues[0]=-100

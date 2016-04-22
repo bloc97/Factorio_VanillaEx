@@ -76,8 +76,30 @@ item_ammo[9].ammo_type.action.action_delivery.starting_speed=0.6
 item_ammo[9].ammo_type.action.action_delivery.max_range=60
 item_ammo[9].order="d[cannon-shell]-b[explosive]-f"
 
+item_ammo[10]=util.table.deepcopy(data.raw["ammo"]["basic-bullet-magazine"])
+item_ammo[10].name="hollow-bullet-magazine"
+--item_ammo[10].magazine_size=10
+item_ammo[10].ammo_type.action[1].action_delivery[1].target_effects={
+    {type = "create-entity",entity_name = "explosion-hit"},
+	{type = "damage", damage = { amount = 2 , type = "physical"}},
+	{type = "damage", damage = { amount = 2 , type = "impact"}},}
+item_ammo[10].order="a[basic-clips]-a[basic-bullet-magazine]-a"
 
+item_ammo[11]=util.table.deepcopy(data.raw["ammo"]["basic-bullet-magazine"])
+item_ammo[11].name="incendiary-bullet-magazine"
+item_ammo[11].ammo_type.action[1].action_delivery[1].target_effects={
+    {type = "create-entity",entity_name = "explosion-hit"},
+	{type = "damage", damage = { amount = 2 , type = "explosion"}},
+	{type = "damage", damage = { amount = 4 , type = "fire"}},}
+item_ammo[11].order="a[basic-clips]-b[piercing-bullet-magazine]-a"
 
+item_ammo[12]=util.table.deepcopy(data.raw["ammo"]["basic-bullet-magazine"])
+item_ammo[12].name="explosive-bullet-magazine"
+item_ammo[12].ammo_type.action[1].action_delivery[1].target_effects={
+    {type = "create-entity",entity_name = "explosion-hit"},
+	{type = "damage", damage = { amount = 2 , type = "physical"}},
+	{type = "damage", damage = { amount = 6 , type = "explosion"}},}
+item_ammo[12].order="a[basic-clips]-b[piercing-bullet-magazine]-b"
 
 item_ammo[0]=#item_ammo
 

@@ -1,9 +1,10 @@
-data:extend({
+data:extend(
+{
 
   {
     type = "solar-panel",
     name = "high-density-solar",
-    icon = iconpath.."dense-solar.png",
+    icon = iconpath.."high-density-solar.png",
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "high-density-solar"},
     max_health = 100,
@@ -27,7 +28,7 @@ data:extend({
   {
     type = "solar-panel",
     name = "stacked-density-solar",
-    icon = iconpath.."stacked-solar.png",
+    icon = iconpath.."stacked-density-solar.png",
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "stacked-density-solar"},
     max_health = 100,
@@ -46,7 +47,7 @@ data:extend({
       width = 104,
       height = 96
     },
-    production = "400kW"
+    production = "300kW"
   },
   
   {
