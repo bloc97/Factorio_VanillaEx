@@ -35,3 +35,51 @@ data:extend(
 end
 
 
+for i=1,gunsdat_item_ammo[0] do
+
+
+data:extend(
+{
+{
+    type = "ammo",
+    name = gunsdat_item_ammo[i].name,
+    icon = iconpath..gunsdat_item_ammo[i].icon,
+    flags = {"goes-to-main-inventory"},
+    ammo_type =
+    {
+      category = "bullet",
+      action =
+      {
+        {
+          type = "direct",
+          action_delivery =
+          {
+            {
+              type = "instant",
+              source_effects =
+              {
+                {
+                  type = "create-explosion",
+                  entity_name = "explosion-gunshot"
+                }
+              },
+              target_effects =
+			  gunsdat_item_ammo[i].damage,
+              {
+                {
+                  type = "create-entity",
+                  entity_name = "explosion-hit"
+                },
+                
+              }
+            }
+          }
+        }
+      }
+    },
+    magazine_size = gunsdat_item_ammo[i].size,
+    subgroup = "ammo",
+    order = gunsdat_item_ammo[i].order,
+    stack_size = gunsdat_item_ammo[i].stack
+  },})
+end
