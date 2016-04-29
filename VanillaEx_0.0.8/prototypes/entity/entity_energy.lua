@@ -47,7 +47,7 @@ data:extend(
       width = 104,
       height = 96
     },
-    production = "300kW"
+    production = "200kW"
   },
   
   {

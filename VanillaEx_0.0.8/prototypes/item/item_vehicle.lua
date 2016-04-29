@@ -24,11 +24,6 @@ item_vehicle[6]=util.table.deepcopy(data.raw["item"]["tank"])
 item_vehicle[6].name="tank-mb"
 item_vehicle[6].order="b[personal-transport]-b[tank]-e"
 
-item_vehicle[7]=util.table.deepcopy(data.raw["item"]["tank"])
-item_vehicle[7].name="seaplane_u1"
-item_vehicle[7].order="b[personal-transport]-b[tank]-f"
-
-
 
 item_vehicle[0]=#item_vehicle -- Finds size of table (# of items)
 
