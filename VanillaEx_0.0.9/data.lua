@@ -1,6 +1,3 @@
-require("util")
-require("defines")
-
 require("config")
 
 require("data_paths")

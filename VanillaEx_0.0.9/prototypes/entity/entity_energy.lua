@@ -117,7 +117,92 @@ data:extend(
   },
   
   
-  
+  {
+		type = "generator",
+		name = "tidal-generator",
+		icon = toicon("tidal-generator"),
+		flags = {"placeable-neutral","player-creation"},
+		minable = {mining_time = 1, result = "tidal-generator"},
+		max_health = 100,
+		corpse = "big-remnants",
+		effectivity = 1,
+		fluid_usage_per_tick = 0.012,
+		resistances =
+		{
+			{
+				type = "physical",
+				percent = 10
+			}
+		},
+		collision_mask = {"ground-tile"},
+		collision_box = {{-0.6, -0.6}, {0.6, 0.6}},
+		selection_box = {{-1, -1}, {1, 1}},
+		fluid_box =
+		{
+			base_area = 1,			
+			pipe_connections =
+			{
+				--{ position = {-1, 2} },
+				--{ position = {-1,-2} },
+			},
+			
+		},
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "primary-output"
+		},
+		horizontal_animation =
+		{
+		filename = toentity("tidal-generator").."tidal-generator.png",
+		width = 131,
+		height = 144,
+			frame_count = 4,
+			line_length = 4,
+		shift = {0.8, 1}
+		},
+		vertical_animation =
+		{
+		filename = toentity("tidal-generator").."tidal-generator_1.png",
+		width = 131,
+		height = 144,
+			frame_count = 4,
+			line_length = 4,
+		shift = {0.8, 1}
+		},	
+		smoke =
+		{
+			
+		},
+	working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/train-wheels.ogg",
+        volume = 0.6
+      },
+      match_speed_to_activity = true,
+    },
+    min_perceived_performance = 0.25,
+    performance_to_sound_speedup = 0.2
+  },
+
+
+	{
+	type = "fluid",
+	name = "water_speed",
+	default_temperature = 0,
+	max_temperature = 100,
+	heat_capacity = "1KJ",
+    base_color = {r=0, g=0.34, b=0.6},
+    flow_color = {r=0.7, g=0.7, b=0.7},
+    icon = "__base__/graphics/icons/fluid/water.png",
+    order = "a[fluid]-x",
+    pressure_to_speed_ratio = 0.4,
+    flow_to_energy_ratio = 0.6,
+	},
+
+
   
   
 })

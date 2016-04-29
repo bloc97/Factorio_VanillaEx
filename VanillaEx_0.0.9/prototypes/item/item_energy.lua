@@ -10,7 +10,11 @@ item_energy[2].order="d[solar-panel]-a[solar-panel]-b"
 
 item_energy[3]=util.table.deepcopy(data.raw["item"]["solar-panel"])
 item_energy[3].name="accumulator2"
-item_energy[3].order="e[accumulator]-a"
+item_energy[3].order="e[accumulator]-a[basic-accumulator]-a"
+
+item_energy[4]=util.table.deepcopy(data.raw["item"]["solar-panel"])
+item_energy[4].name="tidal-generator"
+item_energy[4].order="d[solar-panel]-a[solar-panel]-c"
 
 
 item_energy[0]=#item_energy
