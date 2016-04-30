@@ -22,6 +22,7 @@ script.on_event(defines.events.on_tick, function(event)
 			update_tide()
 		end
 		check_tidal_generators()
+		check_wind_generators()
 		
 		if global.load == true then
 		for i, player in ipairs(game.players) do 
@@ -42,7 +43,27 @@ script.on_event(defines.events.on_built_entity, function(event)
 		table.insert(global.tidal_gen, tidal_gen)
 		tidal_gen.fluidbox[1] = {type="water_speed", amount=100, temperature=(global.tides*100)}
 	end
+	
+	if event.created_entity.name == "wind-generator" then		
+		local wind_gen = event.created_entity
+		if global.wind_gen == nil
+			then global.wind_gen = {}
+		end
+		table.insert(global.wind_gen, wind_gen)
+		wind_gen.fluidbox[1] = {type="wind", amount=100, temperature=(global.tides*100)}
+	end
+	
+	if event.created_entity.name == "wind-generator2" then		
+		local wind_gen = event.created_entity
+		if global.wind_gen == nil
+			then global.wind_gen = {}
+		end
+		table.insert(global.wind_gen, wind_gen)
+		wind_gen.fluidbox[1] = {type="wind", amount=100, temperature=(global.tides*100)}
+	end
 end)
+
+
 
 script.on_event(defines.events.on_robot_built_entity, function(event)
 	if event.created_entity.name == "tidal-generator" then		
@@ -74,7 +95,7 @@ end
 function check_tidal_generators()
    if global.tidal_gen ~= nil then
   	    for k,gen in pairs(global.tidal_gen) do
-      		if k % 10 == game.tick % 10 then
+      		if k % 30 == game.tick % 30 then
 				if gen.valid then
          			if gen.fluidbox[1] ~= nil then 
          					local pot = gen.fluidbox[1]
@@ -89,7 +110,23 @@ function check_tidal_generators()
 	end
 end
 
-
+function check_wind_generators()
+   if global.wind_gen ~= nil then
+  	    for k,gen in pairs(global.wind_gen) do
+      		if k % 10 == game.tick % 10 then
+				if gen.valid then
+         			if gen.fluidbox[1] ~= nil then 
+         					local pot = gen.fluidbox[1]
+							pot.amount = 10				
+							pot.temperature = 100*(global.tides)
+							gen.fluidbox[1] = pot				
+					else table.remove(global.wind_gen, k)
+					end				
+				end
+			end
+		end
+	end
+end
 
 
 
