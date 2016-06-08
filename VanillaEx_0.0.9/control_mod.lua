@@ -1,7 +1,7 @@
-require "lualib.fmath"
-require "lualib.entity"
-require "lualib.generator"
-require "lualib.nature"
+require "lualib.ExFmath"
+require "lualib.ExEntity"
+require "lualib.ExGame"
+require "lualib.ExNature"
 
 -- Separated the "mod" portion from the Factorio API to facilitate the creation of a mock API.
 
@@ -31,8 +31,8 @@ end
 
 function gameTick()
   if global.generator ~= nil then
-    if global.generator.tidal ~= nil then checkGenerators(global.generator.tidal) end
-    if global.generator.wind ~= nil then checkGenerators(global.generator.wind) end
+    if global.generator.tidal ~= nil then ExGame.checkGenerators(global.generator.tidal) end
+    if global.generator.wind ~= nil then ExGame.checkGenerators(global.generator.wind) end
   end
 end
 

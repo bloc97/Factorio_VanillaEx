@@ -8,6 +8,7 @@ for i=1,maxplayers do
   game.players[i].force={}
   game.players[i].force.reset_recipes = function() modprint("Recipes Reloaded for Player "..i) end
   game.players[i].force.reset_technologies = function() modprint("Technologies Reloaded for Player "..i) end
+  api.events=api.events+1
   apiprint("Player '"..i.."' Spawned.")
 end
 
@@ -19,5 +20,6 @@ function placeentity(name) -- "Places an entity in the virtual "factorio"
   event.created_entity.name=name
   event.created_entity.fluidbox={}
   apiprint("Entity '"..name.."' Spawned.")
+  api.events=api.events+1
   return event
 end

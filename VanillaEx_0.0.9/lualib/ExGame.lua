@@ -1,4 +1,5 @@
-function checkGenerators(typetable)
+ExGame={
+checkGenerators = function(typetable)
   	for k,gen in pairs(typetable) do
       	if k*5 % 60 == game.tick % 60 and gen.valid then
 		--game.players[1].print(k)
@@ -8,11 +9,11 @@ function checkGenerators(typetable)
 				pot.amount = 10				
 				
 				if typetable == global.generator.tidal then
-				  pot.temperature = 100*(nature.getTide(game.tick))
+				  pot.temperature = 100*(ExNature.getTide(game.tick))
 				  type="Tidal"
 				
 				elseif typetable == global.generator.wind then
-          pot.temperature = 100*(nature.getTide(game.tick))
+          pot.temperature = 100*(ExNature.getTide(game.tick))
           type="Wind"
         
 				else
@@ -20,7 +21,7 @@ function checkGenerators(typetable)
           type="Error"
         end
 				
-				if MODdebug~=nil then print("Debug : Tick "..game.tick..", "..type.." Generator "..k..", Temperature: "..pot.temperature) end
+				if MODdebug~=nil then if MODdebug==true then print("Debug : Tick "..game.tick..", "..type.." Generator "..k..", Temperature: "..pot.temperature) end end
 				
 				gen.fluidbox[1] = pot		
 									
@@ -30,6 +31,8 @@ function checkGenerators(typetable)
 		end
 	end
 end
+
+}
 
 --Using derivatives as a smoother way to find tides, not yet complete
 --[[function checkGenerators(typetable)

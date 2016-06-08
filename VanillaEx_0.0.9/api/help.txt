@@ -1,5 +1,7 @@
 The API Emulator acts similar to a player. It makes the ticks go foward, and can spawn fake entities. Its main function is to make something happen.
 
+Run apiemu.lua
+
 The Gamehandler is trying to create an fake Factorio API, which the mod code can use. 
 When the mod requests for example player.force, it will do so from gamehandler.lua, instead of the game.
 

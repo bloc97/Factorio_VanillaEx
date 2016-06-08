@@ -1,13 +1,13 @@
 -- Custom API Functions
 
 function apiprint(text)
-if APIdebug==true then
-print("APIEmu: "..text)
-end
+  if APIdebug==true then
+    print("APIEmu: Tick "..game.tick..", "..text)
+  end
 end
 
 function modprint(text)
-if MODdebug==true then
-print("Debug: "..text)
-end
+  if MODdebug==true then
+    print("Debug: Tick "..game.tick..", "..text)
+  end
 end

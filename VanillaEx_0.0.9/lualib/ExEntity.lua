@@ -1,25 +1,27 @@
 
-function buildEntity(event)
+ExEntity={
+
+build = function(event)
 	local entity = event.created_entity
-	local entitytype = checkEntity(entity.name)
+	local entitytype = ExEntity.check(entity.name)
 	
 	if entitytype.category=="generator" then
-	createGenerator(entity,entitytype)
+	ExEntity.createGenerator(entity,entitytype)
 	end
-end
+end,
 
 --[[function mineEntity(event)
-	game.players[1].print(event.name)
-	local entity = event.entity
-	local entitytype = checkEntity(entity.name)
-	
-	if entitytype.category=="generator" then
-	entity.health=0
-	end
-end]]
+  game.players[1].print(event.name)
+  local entity = event.entity
+  local entitytype = check(entity.name)
+  
+  if entitytype.category=="generator" then
+  entity.health=0
+  end
+end,]]
 
 
-function checkEntity(name)
+check = function(name)
 	if name=="tidal-generator" then
 	return {category="generator",subcategory="tidal"}
 	
@@ -29,10 +31,10 @@ function checkEntity(name)
 	else
 	return {}
 	end
-end
+end,
 
 
-function createTableGenerators(entitytype)
+createTableGenerators = function(entitytype)
 	if global.generator == nil then
 		global.generator = {}
 	end
@@ -44,18 +46,19 @@ function createTableGenerators(entitytype)
 	if global.generator.wind == nil and entitytype.subcategory=="wind" then
 		global.generator.wind = {}
 	end
-end
+end,
 
 
-function createGenerator(entity,entitytype)
+createGenerator = function(entity,entitytype)
 	if entitytype.subcategory == "tidal" then
-		createTableGenerators(entitytype)
-		entity.fluidbox[1] = {type="water_speed", amount=100, temperature=100*(nature.getTide(game.tick))}
+		ExEntity.createTableGenerators(entitytype)
+		entity.fluidbox[1] = {type="water_speed", amount=100, temperature=100*(ExNature.getTide(game.tick))}
 		table.insert(global.generator.tidal, entity)
 	end
 	if entitytype.subcategory == "wind" then
-		createTableGenerators(entitytype)
-		entity.fluidbox[1] = {type="wind", amount=100, temperature=100*(nature.getTide(game.tick))}
+		ExEntity.createTableGenerators(entitytype)
+		entity.fluidbox[1] = {type="wind", amount=100, temperature=100*(ExNature.getTide(game.tick))}
 		table.insert(global.generator.wind, entity)
 	end
 end
+}
