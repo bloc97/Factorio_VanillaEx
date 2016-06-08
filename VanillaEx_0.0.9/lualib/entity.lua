@@ -1,3 +1,4 @@
+
 function buildEntity(event)
 	local entity = event.created_entity
 	local entitytype = checkEntity(entity.name)
@@ -30,6 +31,7 @@ function checkEntity(name)
 	end
 end
 
+
 function createTableGenerators(entitytype)
 	if global.generator == nil then
 		global.generator = {}
@@ -44,15 +46,16 @@ function createTableGenerators(entitytype)
 	end
 end
 
+
 function createGenerator(entity,entitytype)
 	if entitytype.subcategory == "tidal" then
 		createTableGenerators(entitytype)
-		entity.fluidbox[1] = {type="water_speed", amount=100, temperature=(global.tides*100)}
+		entity.fluidbox[1] = {type="water_speed", amount=100, temperature=100*(nature.getTide(game.tick))}
 		table.insert(global.generator.tidal, entity)
 	end
 	if entitytype.subcategory == "wind" then
 		createTableGenerators(entitytype)
-		entity.fluidbox[1] = {type="wind", amount=100, temperature=(global.tides*100)}
+		entity.fluidbox[1] = {type="wind", amount=100, temperature=100*(nature.getTide(game.tick))}
 		table.insert(global.generator.wind, entity)
 	end
 end

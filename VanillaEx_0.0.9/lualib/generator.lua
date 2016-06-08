@@ -4,9 +4,26 @@ function checkGenerators(typetable)
 		--game.players[1].print(k)
          	if gen.fluidbox[1] ~= nil then 
 				local pot = gen.fluidbox[1]
+				local type
 				pot.amount = 10				
-				pot.temperature = 100*(getTide())
-				gen.fluidbox[1] = pot							
+				
+				if typetable == global.generator.tidal then
+				  pot.temperature = 100*(nature.getTide(game.tick))
+				  type="Tidal"
+				
+				elseif typetable == global.generator.wind then
+          pot.temperature = 100*(nature.getTide(game.tick))
+          type="Wind"
+        
+				else
+          pot.temperature = 0
+          type="Error"
+        end
+				
+				if MODdebug~=nil then print("Debug : Tick "..game.tick..", "..type.." Generator "..k..", Temperature: "..pot.temperature) end
+				
+				gen.fluidbox[1] = pot		
+									
 			elseif time_to_live ~= nil then
 				table.remove(typetable, k)		
 			end				

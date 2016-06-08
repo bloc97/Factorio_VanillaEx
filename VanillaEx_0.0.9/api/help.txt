@@ -1,0 +1,10 @@
+The API Emulator acts similar to a player. It makes the ticks go foward, and can spawn fake entities. Its main function is to make something happen.
+
+The Gamehandler is trying to create an fake Factorio API, which the mod code can use. 
+When the mod requests for example player.force, it will do so from gamehandler.lua, instead of the game.
+
+Different print titles:
+
+APIEmu is a print from the API itself, when it creates a player, spawns entities etc.
+VanillaEx is a print from the Mod to the console, which would appear in real situations.
+Debug is a print from the Mod code, it is what the mod is doing in reaction to events caused by the APIEmu/Player, this is normally unseen, and is useful in debugging.
