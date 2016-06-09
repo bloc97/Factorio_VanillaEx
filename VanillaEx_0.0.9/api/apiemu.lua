@@ -8,7 +8,7 @@ require "api.apifunc"
 require "api.apiconfig"
 require "api.gamehandler"
 require "config"
-require "control_mod"
+require "lualib.ExControl"
 
 
 while api.tick<gameduration+10000000 do

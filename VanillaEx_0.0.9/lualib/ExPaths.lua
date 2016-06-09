@@ -1,5 +1,5 @@
 --Generates all the paths for this mod. This makes it possible to easily change the name whenever it is necessary.
-modname="__VanillaEx__"
+modname=modfolder
 iconpath=modname.."/graphics/icons/"
 entitypath=modname.."/graphics/entity/"
 techpath=modname.."graphics/technology/"

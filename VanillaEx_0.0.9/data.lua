@@ -1,6 +1,6 @@
 require("config")
 
-require("data_paths")
+require("lualib.ExPaths")
 require("prototypes.categories")
 
 if enable_guns or enable_vehicles_civilian or enable_vehicles_military then

@@ -1,3 +1,4 @@
+modfolder="__VanillaEx__"
 enable_guns=true -- Enable VanillaEx guns and ammo.
 
 enable_vehicles_civilian=true -- Enables VanillaEx civilian vehicles such as Trucks, Boats, Civilian Planes, etc.

@@ -1,6 +1,6 @@
 require "defines"
 require "util"
-require "control_mod"
+require "lualib.ExControl"
 
 script.on_init(function() gameInit() end)
 script.on_load(function() gameLoad() end)
