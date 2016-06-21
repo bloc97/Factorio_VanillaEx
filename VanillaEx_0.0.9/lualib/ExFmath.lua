@@ -44,6 +44,19 @@ else
 y = x
 end
 return y
+end,
+
+interval = function(x,lower,upper)
+if x<lower then y=lower elseif x>upper then y=upper else y=x end
+return y
+end,
+
+checkdiff = function(x,y,diff)
+if ExFmath.abs(ExFmath.abs(x)-ExFmath.abs(y))<ExFmath.abs(diff) then
+return false
+else
+return true
+end
 end
 
 }

@@ -3,6 +3,8 @@ api={}
 api.tick=0
 api.events=0
 isrun=true
+math.randomseed(2)
+--math.randomseed(os.time())
 
 require "api.apifunc"
 require "api.apiconfig"
@@ -11,7 +13,7 @@ require "config"
 require "lualib.ExControl"
 
 
-while api.tick<gameduration+10000000 do
+while api.tick<gameduration+10^7 do
 api.tick=api.tick+1
 
 if #game.players>0 and isrun then

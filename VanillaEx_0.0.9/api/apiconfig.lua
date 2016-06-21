@@ -5,7 +5,7 @@ APIdebug=true -- Tells the API to print or not, does not affect tickprint nor th
 
 tickprint=0 -- How many ticks to wait before printing tick number, 0 to disable.
 
-gameduration=1000 -- How long to run the "game"
+gameduration=25000 -- How long to run the "game"
 maxplayers=1 -- How many players to spawn, 0 will prevent anything from happening, just like when you open Factorio, but do not enter a game.
 
 buildeventticks = {20,100,120} -- Which ticks to place entities
