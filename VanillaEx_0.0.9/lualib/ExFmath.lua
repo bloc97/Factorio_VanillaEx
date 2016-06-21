@@ -52,11 +52,15 @@ return y
 end,
 
 checkdiff = function(x,y,diff)
-if ExFmath.abs(ExFmath.abs(x)-ExFmath.abs(y))<ExFmath.abs(diff) then
+if ExFmath.absdiff(x,y)<ExFmath.abs(diff) then
 return false
 else
 return true
 end
-end
+end,
+
+absdiff = function(x,y)
+return ExFmath.abs(ExFmath.abs(x)-ExFmath.abs(y))
+end,
 
 }

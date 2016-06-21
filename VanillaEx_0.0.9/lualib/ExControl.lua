@@ -34,8 +34,8 @@ function gameTick()
     if global.generator.tidal ~= nil then ExGame.checkGenerators(global.generator.tidal) end
     if global.generator.wind ~= nil then ExGame.checkGenerators(global.generator.wind) end
   end
-  if game.tick%60==0 then ExNature.updateFlucWind() end
-  if game.tick%6000==3000 then ExNature.updateWind() end
+  if game.tick%60==0 then ExNature.updateWindFluc();ExNature.updateTide(game.tick) end
+  if game.tick%6000==0 then ExNature.updateWind() end
 end
 
 

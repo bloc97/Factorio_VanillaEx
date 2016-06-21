@@ -9,7 +9,7 @@ checkGenerators = function(typetable)
 				pot.amount = 10				
 				
 				if typetable == global.generator.tidal then
-				  pot.temperature = 100*(ExNature.getRealTide(game.tick))
+				  pot.temperature = 100*(ExNature.getRealTide())
 				  type="Tidal"
 				
 				elseif typetable == global.generator.wind then
@@ -21,7 +21,7 @@ checkGenerators = function(typetable)
           type="Error"
         end
 				
-				if MODdebug~=nil then if MODdebug==true then print("Debug : Tick "..game.tick..", ("..math.floor(game.tick/60).." seconds) "..type.." Generator "..k..", Temperature: "..pot.temperature) end end
+				if MODdebug~=nil then if MODdebug==true then print("Debug : Tick "..game.tick.." ("..math.floor(game.tick/60).." seconds), "..type.." Generator "..k..", Temperature: "..pot.temperature) end end
 				
 				gen.fluidbox[1] = pot		
 									
