@@ -22,7 +22,7 @@ ExGame={
           end
 
           if MODdebug~=nil then if MODdebug==true then print("Debug : Tick "..game.tick.." ("..math.floor(game.tick/60).." seconds), "..type.." Generator "..k..", Temperature: "..pot.temperature) end end
-
+          
           gen.fluidbox[1] = pot
 
         elseif time_to_live ~= nil then

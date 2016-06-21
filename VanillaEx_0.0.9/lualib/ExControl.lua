@@ -1,7 +1,9 @@
+require "lualib.ExConstant"
 require "lualib.ExFmath"
 require "lualib.ExEntity"
 require "lualib.ExGame"
 require "lualib.ExNature"
+
 
 -- Separated the "mod" portion from the Factorio API to facilitate the creation of a mock API.
 
@@ -34,8 +36,8 @@ function gameTick()
     if global.generator.tidal ~= nil then ExGame.checkGenerators(global.generator.tidal) end
     if global.generator.wind ~= nil then ExGame.checkGenerators(global.generator.wind) end
   end
-  if game.tick%60==0 then ExNature.updateWindFluc();ExNature.updateTide(game.tick) end
-  if game.tick%6000==0 then ExNature.updateWind() end
+  if game.tick%ExConstant.shortdelay==0 then ExNature.updateWindFluc();ExNature.updateTide(game.tick) end
+  if game.tick%ExConstant.longdelay==0 then ExNature.updateWind() end
 end
 
 
