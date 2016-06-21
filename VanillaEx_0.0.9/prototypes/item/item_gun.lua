@@ -77,8 +77,9 @@ item_gun[10].attack_parameters.movement_slow_down_factor=0.95
 item_gun[0]=#item_gun -- Finds size of table (# of projectiles)
 
 for e=1,item_gun[0] do -- Extends Factorio table (adds entity to the game)
-data:extend({
-item_gun[e],
-})
+  data:extend({
+    item_gun[e],
+  })
 end
+
 			

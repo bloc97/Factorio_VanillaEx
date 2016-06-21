@@ -27,15 +27,15 @@ item_energy[6].order="d[solar-panel]-a[solar-panel]-e"
 item_energy[0]=#item_energy
 
 for i=1,item_energy[0] do -- Generates icons and minable.result using name
-item_energy[i].icon=toicon(item_energy[i].name)
+  item_energy[i].icon=toicon(item_energy[i].name)
 end
 
 for k=1,item_energy[0] do -- Generates placeable entity
-item_energy[k].place_result=item_energy[k].name
+  item_energy[k].place_result=item_energy[k].name
 end
 
 for e=1,item_energy[0] do -- Extends Factorio table (adds entity to the game)
-data:extend({
-item_energy[e],
-})
+  data:extend({
+    item_energy[e],
+  })
 end

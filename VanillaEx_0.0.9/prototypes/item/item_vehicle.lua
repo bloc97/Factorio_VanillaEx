@@ -28,12 +28,12 @@ item_vehicle[6].order="b[personal-transport]-b[tank]-e"
 item_vehicle[0]=#item_vehicle -- Finds size of table (# of items)
 
 for i=1,item_vehicle[0] do -- Generates icons and place_result using name
-item_vehicle[i].icon=toicon(item_vehicle[i].name)
-item_vehicle[i].place_result=item_vehicle[i].name
+  item_vehicle[i].icon=toicon(item_vehicle[i].name)
+  item_vehicle[i].place_result=item_vehicle[i].name
 end
 
 for e=1,item_vehicle[0] do -- Extends Factorio table (adds item to the game)
-data:extend({
-item_vehicle[e],
-})
+  data:extend({
+    item_vehicle[e],
+  })
 end

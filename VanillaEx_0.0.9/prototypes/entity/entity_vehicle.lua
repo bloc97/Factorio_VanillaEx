@@ -119,13 +119,14 @@ entity_vehicle[6].guns={"tank-mb-cannon","tank-rocket"}
 entity_vehicle[0]=#entity_vehicle -- Finds size of table (# of vehicles)
 
 for i=1,entity_vehicle[0] do -- Generates icons and minable.result using name
-entity_vehicle[i].icon=toicon(entity_vehicle[i].name)
-entity_vehicle[i].minable.result=entity_vehicle[i].name
+  entity_vehicle[i].icon=toicon(entity_vehicle[i].name)
+  entity_vehicle[i].minable.result=entity_vehicle[i].name
 end
 
 for e=1,entity_vehicle[0] do -- Extends Factorio table (adds entity to the game)
-data:extend({
-entity_vehicle[e],
-})
+  data:extend({
+    entity_vehicle[e],
+  })
 end
+
 

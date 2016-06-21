@@ -80,36 +80,36 @@ item_ammo[10]=util.table.deepcopy(data.raw["ammo"]["basic-bullet-magazine"])
 item_ammo[10].name="hollow-bullet-magazine"
 --item_ammo[10].magazine_size=10
 item_ammo[10].ammo_type.action[1].action_delivery[1].target_effects={
-    {type = "create-entity",entity_name = "explosion-hit"},
-	{type = "damage", damage = { amount = 2 , type = "physical"}},
-	{type = "damage", damage = { amount = 2 , type = "impact"}},}
+  {type = "create-entity",entity_name = "explosion-hit"},
+  {type = "damage", damage = { amount = 2 , type = "physical"}},
+  {type = "damage", damage = { amount = 2 , type = "impact"}},}
 item_ammo[10].order="a[basic-clips]-a[basic-bullet-magazine]-a"
 
 item_ammo[11]=util.table.deepcopy(data.raw["ammo"]["basic-bullet-magazine"])
 item_ammo[11].name="incendiary-bullet-magazine"
 item_ammo[11].ammo_type.action[1].action_delivery[1].target_effects={
-    {type = "create-entity",entity_name = "explosion-hit"},
-	{type = "damage", damage = { amount = 2 , type = "explosion"}},
-	{type = "damage", damage = { amount = 4 , type = "fire"}},}
+  {type = "create-entity",entity_name = "explosion-hit"},
+  {type = "damage", damage = { amount = 2 , type = "explosion"}},
+  {type = "damage", damage = { amount = 4 , type = "fire"}},}
 item_ammo[11].order="a[basic-clips]-b[piercing-bullet-magazine]-a"
 
 item_ammo[12]=util.table.deepcopy(data.raw["ammo"]["basic-bullet-magazine"])
 item_ammo[12].name="explosive-bullet-magazine"
 item_ammo[12].ammo_type.action[1].action_delivery[1].target_effects={
-    {type = "create-entity",entity_name = "explosion-hit"},
-	{type = "damage", damage = { amount = 2 , type = "physical"}},
-	{type = "damage", damage = { amount = 6 , type = "explosion"}},}
+  {type = "create-entity",entity_name = "explosion-hit"},
+  {type = "damage", damage = { amount = 2 , type = "physical"}},
+  {type = "damage", damage = { amount = 6 , type = "explosion"}},}
 item_ammo[12].order="a[basic-clips]-b[piercing-bullet-magazine]-b"
 
 item_ammo[0]=#item_ammo
 
 
 for i=1,item_ammo[0] do -- Generates icons and minable.result using name
-item_ammo[i].icon=toicon(item_ammo[i].name)
+  item_ammo[i].icon=toicon(item_ammo[i].name)
 end
 
 for e=1,item_ammo[0] do -- Extends Factorio table (adds entity to the game)
-data:extend({
-item_ammo[e],
-})
+  data:extend({
+    item_ammo[e],
+  })
 end

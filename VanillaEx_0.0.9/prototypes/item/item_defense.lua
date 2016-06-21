@@ -31,15 +31,15 @@ item_defense[7].order="a[wall]-b[gate]-c"
 item_defense[0]=#item_defense
 
 for i=1,item_defense[0] do -- Generates icons and minable.result using name
-item_defense[i].icon=toicon(item_defense[i].name)
+  item_defense[i].icon=toicon(item_defense[i].name)
 end
 
 for k=1,item_defense[0] do -- Generates placeable entity
-item_defense[k].place_result=item_defense[k].name
+  item_defense[k].place_result=item_defense[k].name
 end
 
 for e=1,item_defense[0] do -- Extends Factorio table (adds entity to the game)
-data:extend({
-item_defense[e],
-})
+  data:extend({
+    item_defense[e],
+  })
 end

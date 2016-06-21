@@ -8,4 +8,6 @@ enable_defense=true -- Enable VanillaEx defensive structures (more walls, more t
 
 enable_energy=true -- Enable VanillaEx energy structures.
 
+
+
 --enable_planes=false -- WIP
