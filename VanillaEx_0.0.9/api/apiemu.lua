@@ -1,4 +1,5 @@
 -- Creates an mock API to test the mod's Control code without actually running factorio
+-- Now also loads the data/custom items
 api={}
 api.tick=0
 api.events=0
@@ -8,10 +9,16 @@ math.randomseed(2)
 
 require "api.apifunc"
 require "api.apiconfig"
-require "api.gamehandler"
+
+require "api.dataloader" -- Loads mod data
+
+require "api.gamehandler" -- Initiates gamestate
 require "config"
 require "lualib.ExControl"
 
+apiprint("Loading Mods")
+printdata()
+apiprint("Mods Loaded")
 
 while api.tick<gameduration+10^7 do
   api.tick=api.tick+1
