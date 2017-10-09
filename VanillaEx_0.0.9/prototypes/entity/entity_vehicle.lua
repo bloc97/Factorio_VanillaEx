@@ -18,6 +18,8 @@ entity_vehicle[2].rotation_speed=0.0020
 entity_vehicle[2].weight=38000
 entity_vehicle[2].inventory_size=100
 entity_vehicle[2].guns={"tank-cannon-arty","tank-machine-gun"}
+entity_vehicle[2].turret_animation.layers[1].filename=toentity("tank").."turret-single.png"
+entity_vehicle[2].turret_animation.layers[3].filename=toentity("tank").."turret-single-shadow.png"
 
 entity_vehicle[3]=util.table.deepcopy(data.raw["car"]["tank"])
 entity_vehicle[3].name="tank-auto"
@@ -63,18 +65,19 @@ entity_vehicle[5].icon=toicon(entity_vehicle[5].name)
 entity_vehicle[5].minable.result=entity_vehicle[5].name
 entity_vehicle[5].max_health=800
 entity_vehicle[5].resistances={{type = "fire",decrease=5,percent=50},{type = "physical",decrease=5,percent=20},{type = "impact",decrease=50,percent=30},{type = "explosion",decrease=10,percent=10},{type = "acid",decrease=5,percent=10}}
-entity_vehicle[5].consumption="300kW"
+entity_vehicle[5].consumption="200kW"
 entity_vehicle[5].braking_power="200kW"
-entity_vehicle[5].effectivity=0.6
+entity_vehicle[5].effectivity=0.5
 entity_vehicle[5].burner.effectivity=0.70
 entity_vehicle[5].burner.fuel_inventory_size=2
 entity_vehicle[5].terrain_friction_modifier=0
 entity_vehicle[5].friction=0.001
 entity_vehicle[5].turret_rotation_speed=0.55 / 60
-entity_vehicle[5].rotation_speed=0.0035
+entity_vehicle[5].rotation_speed=0.01
 entity_vehicle[5].weight=1500
 entity_vehicle[5].inventory_size=160
 entity_vehicle[5].guns=nil
+entity_vehicle[5].turret_animation=nil
 
 entity_vehicle[6]=util.table.deepcopy(data.raw["car"]["tank"])
 entity_vehicle[6].name="tank-mb"
