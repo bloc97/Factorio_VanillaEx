@@ -83,8 +83,8 @@ entity_vehicle[6]=util.table.deepcopy(data.raw["car"]["tank"])
 entity_vehicle[6].name="tank-mb"
 entity_vehicle[6].icon=toicon(entity_vehicle[6].name)
 entity_vehicle[6].minable.result=entity_vehicle[6].name
-entity_vehicle[6].max_health=5000
-entity_vehicle[6].resistances={{type = "fire",decrease=15,percent=75},{type = "physical",decrease=20,percent=70},{type = "impact",decrease=50,percent=80},{type = "explosion",decrease=30,percent=70},{type = "acid",decrease=30,percent=60}}
+entity_vehicle[6].max_health=3500
+entity_vehicle[6].resistances={{type = "fire",decrease=15,percent=75},{type = "physical",decrease=20,percent=70},{type = "impact",decrease=50,percent=80},{type = "explosion",decrease=30,percent=70},{type = "acid",decrease=15,percent=55}}
 entity_vehicle[6].consumption="1400kW"
 entity_vehicle[6].braking_power="500kW"
 entity_vehicle[6].burner.effectivity=0.85
@@ -95,7 +95,7 @@ entity_vehicle[6].friction=0.002
 entity_vehicle[6].turret_rotation_speed=0.45 / 60
 entity_vehicle[6].rotation_speed=0.0055
 entity_vehicle[6].weight=40000
-entity_vehicle[6].inventory_size=140
+entity_vehicle[6].inventory_size=100
 entity_vehicle[6].guns={"tank-mb-cannon","tank-rocket"}
 entity_vehicle[6].animation.layers[1].stripes[1].filename = entitypath.."tank/mbt-base-1.png"
 entity_vehicle[6].animation.layers[1].stripes[2].filename = entitypath.."tank/mbt-base-2.png"
