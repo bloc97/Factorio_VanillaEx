@@ -1,0 +1,11 @@
+{
+  "name": "VanillaEx",
+  "version": "0.0.9",
+  "title": "Vanilla Extension",
+  "author": "Bloc97",
+  "contact": "",
+  "homepage": "",
+  "factorio_version": "0.15",
+  "dependencies": ["base >= 0.15"],
+  "description": "Adds a whole bunch of stuff. Balanced for vanilla. Last tested on 0.15"
+}
