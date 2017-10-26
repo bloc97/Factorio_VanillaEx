@@ -8,7 +8,7 @@ entity_vehicle[2].max_health=1600
 entity_vehicle[2].resistances={{type = "fire",decrease=15,percent=50},{type = "physical",decrease=15,percent=30},{type = "impact",decrease=50,percent=30},{type = "explosion",decrease=15,percent=30},{type = "acid",decrease=10,percent=20}}
 entity_vehicle[2].consumption="1000kW"
 entity_vehicle[2].braking_power="400kW"
-entity_vehicle[2].burner.effectivity=0.60
+entity_vehicle[2].burner.effectivity=0.65
 entity_vehicle[2].effectivity=0.6
 entity_vehicle[2].burner.fuel_inventory_size=3
 entity_vehicle[2].terrain_friction_modifier=0.2

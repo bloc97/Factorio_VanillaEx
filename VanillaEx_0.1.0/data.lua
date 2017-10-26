@@ -2,6 +2,7 @@ require("util")
 
 require("config")
 
+
 require("data_paths")
 require("prototypes.categories")
 

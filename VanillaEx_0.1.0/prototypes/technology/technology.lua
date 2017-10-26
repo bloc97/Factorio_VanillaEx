@@ -99,6 +99,31 @@ count=200,time_r=30,
 order="b-c-a",
 }
 table.insert(technology_enabled, technology_all[8])
+
+local windGenerator = {name="renewables",icon=modname.."/graphics/technology/renewables.png",
+effects={
+		{type = "unlock-recipe",recipe = "wind-generator"},
+		{type = "unlock-recipe",recipe = "tidal-generator"},
+		},
+prereq={"solar-energy","electric-engine"},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
+count=400,time_r=60,
+order="a-h-e",
+}
+table.insert(technology_enabled, windGenerator)
+
+local heatStorage = {name="heat-storage",icon=modname.."/graphics/technology/heat-storage.png",
+effects={
+		{type = "unlock-recipe",recipe = "boiler-electric"},
+		},
+prereq={"fluid-handling","advanced-material-processing-2","circuit-network"},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
+count=100,time_r=20,
+order="a-h-e",
+}
+table.insert(technology_enabled, heatStorage)
+
+
 end
 
 --[[technology_all[8]={name="fluid-dynamics",icon=modname.."/graphics/technology/amphi.png",
