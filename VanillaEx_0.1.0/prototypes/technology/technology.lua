@@ -1,6 +1,65 @@
 technology_enabled={}
 technology_all={}
 
+
+
+table.insert(data.raw["technology"]["cannon-shell-damage-1"].effects, {type = "ammo-damage", ammo_category = "autocannon-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-damage-1"].effects, {type = "ammo-damage", ammo_category = "flakcannon-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-damage-1"].effects, {type = "ammo-damage", ammo_category = "arty-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-damage-1"].effects, {type = "ammo-damage", ammo_category = "mb-cannon-shell", modifier = 0.2})
+
+table.insert(data.raw["technology"]["cannon-shell-damage-2"].effects, {type = "ammo-damage", ammo_category = "autocannon-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-damage-2"].effects, {type = "ammo-damage", ammo_category = "flakcannon-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-damage-2"].effects, {type = "ammo-damage", ammo_category = "arty-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-damage-2"].effects, {type = "ammo-damage", ammo_category = "mb-cannon-shell", modifier = 0.2})
+
+table.insert(data.raw["technology"]["cannon-shell-damage-3"].effects, {type = "ammo-damage", ammo_category = "autocannon-shell", modifier = 0.3})
+table.insert(data.raw["technology"]["cannon-shell-damage-3"].effects, {type = "ammo-damage", ammo_category = "flakcannon-shell", modifier = 0.3})
+table.insert(data.raw["technology"]["cannon-shell-damage-3"].effects, {type = "ammo-damage", ammo_category = "arty-shell", modifier = 0.3})
+table.insert(data.raw["technology"]["cannon-shell-damage-3"].effects, {type = "ammo-damage", ammo_category = "mb-cannon-shell", modifier = 0.3})
+
+table.insert(data.raw["technology"]["cannon-shell-damage-4"].effects, {type = "ammo-damage", ammo_category = "autocannon-shell", modifier = 0.5})
+table.insert(data.raw["technology"]["cannon-shell-damage-4"].effects, {type = "ammo-damage", ammo_category = "flakcannon-shell", modifier = 0.5})
+table.insert(data.raw["technology"]["cannon-shell-damage-4"].effects, {type = "ammo-damage", ammo_category = "arty-shell", modifier = 0.5})
+table.insert(data.raw["technology"]["cannon-shell-damage-4"].effects, {type = "ammo-damage", ammo_category = "mb-cannon-shell", modifier = 0.5})
+
+table.insert(data.raw["technology"]["cannon-shell-damage-5"].effects, {type = "ammo-damage", ammo_category = "autocannon-shell", modifier = 1})
+table.insert(data.raw["technology"]["cannon-shell-damage-5"].effects, {type = "ammo-damage", ammo_category = "flakcannon-shell", modifier = 1})
+table.insert(data.raw["technology"]["cannon-shell-damage-5"].effects, {type = "ammo-damage", ammo_category = "arty-shell", modifier = 1})
+table.insert(data.raw["technology"]["cannon-shell-damage-5"].effects, {type = "ammo-damage", ammo_category = "mb-cannon-shell", modifier = 1})
+
+table.insert(data.raw["technology"]["cannon-shell-damage-6"].effects, {type = "ammo-damage", ammo_category = "autocannon-shell", modifier = 1})
+table.insert(data.raw["technology"]["cannon-shell-damage-6"].effects, {type = "ammo-damage", ammo_category = "flakcannon-shell", modifier = 1})
+table.insert(data.raw["technology"]["cannon-shell-damage-6"].effects, {type = "ammo-damage", ammo_category = "arty-shell", modifier = 1})
+table.insert(data.raw["technology"]["cannon-shell-damage-6"].effects, {type = "ammo-damage", ammo_category = "mb-cannon-shell", modifier = 1})
+
+
+table.insert(data.raw["technology"]["cannon-shell-speed-1"].effects, {type = "gun-speed", ammo_category = "autocannon-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-speed-1"].effects, {type = "gun-speed", ammo_category = "flakcannon-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-speed-1"].effects, {type = "gun-speed", ammo_category = "arty-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-speed-1"].effects, {type = "gun-speed", ammo_category = "mb-cannon-shell", modifier = 0.2})
+
+table.insert(data.raw["technology"]["cannon-shell-speed-2"].effects, {type = "gun-speed", ammo_category = "autocannon-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-speed-2"].effects, {type = "gun-speed", ammo_category = "flakcannon-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-speed-2"].effects, {type = "gun-speed", ammo_category = "arty-shell", modifier = 0.2})
+table.insert(data.raw["technology"]["cannon-shell-speed-2"].effects, {type = "gun-speed", ammo_category = "mb-cannon-shell", modifier = 0.2})
+
+table.insert(data.raw["technology"]["cannon-shell-speed-3"].effects, {type = "gun-speed", ammo_category = "autocannon-shell", modifier = 0.3})
+table.insert(data.raw["technology"]["cannon-shell-speed-3"].effects, {type = "gun-speed", ammo_category = "flakcannon-shell", modifier = 0.3})
+table.insert(data.raw["technology"]["cannon-shell-speed-3"].effects, {type = "gun-speed", ammo_category = "arty-shell", modifier = 0.3})
+table.insert(data.raw["technology"]["cannon-shell-speed-3"].effects, {type = "gun-speed", ammo_category = "mb-cannon-shell", modifier = 0.3})
+
+table.insert(data.raw["technology"]["cannon-shell-speed-4"].effects, {type = "gun-speed", ammo_category = "autocannon-shell", modifier = 0.6})
+table.insert(data.raw["technology"]["cannon-shell-speed-4"].effects, {type = "gun-speed", ammo_category = "flakcannon-shell", modifier = 0.6})
+table.insert(data.raw["technology"]["cannon-shell-speed-4"].effects, {type = "gun-speed", ammo_category = "arty-shell", modifier = 0.6})
+table.insert(data.raw["technology"]["cannon-shell-speed-4"].effects, {type = "gun-speed", ammo_category = "mb-cannon-shell", modifier = 0.6})
+
+table.insert(data.raw["technology"]["cannon-shell-speed-5"].effects, {type = "gun-speed", ammo_category = "autocannon-shell", modifier = 1})
+table.insert(data.raw["technology"]["cannon-shell-speed-5"].effects, {type = "gun-speed", ammo_category = "flakcannon-shell", modifier = 1})
+table.insert(data.raw["technology"]["cannon-shell-speed-5"].effects, {type = "gun-speed", ammo_category = "arty-shell", modifier = 1})
+table.insert(data.raw["technology"]["cannon-shell-speed-5"].effects, {type = "gun-speed", ammo_category = "mb-cannon-shell", modifier = 1})
+
+
 --technology_all={
 if enable_guns then
 technology_all[1]={name="cooling",icon=modname.."/graphics/technology/cooling.png",
@@ -123,6 +182,94 @@ order="a-h-e",
 }
 table.insert(technology_enabled, heatStorage)
 
+local fusion = {name="nuclear-fusion",icon=modname.."/graphics/technology/fusion.png",
+effects={
+		{type = "unlock-recipe",recipe = "fusion-reactor"},
+		{type = "unlock-recipe",recipe = "heavywater-extraction"},
+		{type = "unlock-recipe",recipe = "superheavywater-extraction"},
+		{type = "unlock-recipe",recipe = "hydrogen-fuel-cell"},
+		},
+prereq={"nuclear-power","advancedopt","fusion-reactor-equipment","advanced-electronics-2"},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"military-science-pack", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}},
+count=8000,time_r=100,
+order="a-e-h",
+}
+table.insert(technology_enabled, fusion)
+
+local thermonuclear = {name="thermonuclear",icon=modname.."/graphics/technology/thermonuclear.png",
+effects={
+		},
+prereq={"nuclear-fusion","atomic-bomb"},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"military-science-pack", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}},
+count=10000,time_r=100,
+order="a-e-h",
+}
+table.insert(technology_enabled, thermonuclear)
+
+table.insert(data.raw["technology"]["nuclear-power"].effects, {type = "unlock-recipe", recipe = "radioisotope-generator"})
+
+local advchem = {name="advanced-chemistry",icon="__base__/graphics/technology/advanced-chemistry.png",
+effects={
+		{type = "unlock-recipe",recipe = "air-collection"},
+		{type = "unlock-recipe",recipe = "electrolysis"},
+		{type = "unlock-recipe",recipe = "oxidizer"},
+		{type = "unlock-recipe",recipe = "coolant"},
+		{type = "unlock-recipe",recipe = "first-aid-kit"},
+		},
+prereq={"fluid-handling","battery","advanced-material-processing-2"},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
+count=250,time_r=25,
+order="a-e-h",
+}
+table.insert(technology_enabled, advchem)
+
+local advmatproc3 = {name="advanced-material-processing-3",icon="__base__/graphics/technology/advanced-material-processing.png",
+effects={
+		{type = "unlock-recipe",recipe = "oxygen-furnace"},
+		},
+prereq={"advanced-chemistry","adv-battery","advanced-material-processing-2"},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}},
+count=300,time_r=30,
+order="c-c-c",
+}
+table.insert(technology_enabled, advmatproc3)
+
+local logistics4 = {name="logistics-4",icon="__base__/graphics/technology/logistics.png",
+effects={
+--Warehouses, belt 4
+		},
+prereq={"logistics-3","advanced-chemistry","logistic-system"},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}},
+count=500,time_r=20,
+order="a-f-d",
+}
+table.insert(technology_enabled, logistics4)
+
+local largescale = {name="large-scale-generation",icon=modname.."/graphics/technology/large-scale-generation.png",
+effects={
+		{type = "unlock-recipe",recipe = "thermal-generator"},
+		{type = "unlock-recipe",recipe = "low-power-heat-exchanger"},
+		{type = "unlock-recipe",recipe = "heat-pipe"},
+		},
+prereq={"advanced-electronics","advanced-material-processing"},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
+count=300,time_r=20,
+order="e-p-b-a",
+}
+table.insert(technology_enabled, largescale)
+
+local advpowerstorage = {name="advanced-power-storage",icon=modname.."/graphics/technology/advanced-storage.png",
+effects={
+		{type = "unlock-recipe",recipe = "capacitor"},
+		{type = "unlock-recipe",recipe = "fuel-cell"},
+		},
+prereq={"adv-battery","advanced-chemistry","heat-storage"},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
+count=300,time_r=20,
+order="e-p-b-a",
+}
+table.insert(technology_enabled, advpowerstorage)
+
 
 end
 
@@ -242,6 +389,9 @@ count=150,time_r=30,
 order="a-e-h",
 }
 table.insert(technology_enabled, technology_all[16])
+
+
+
 end
 
 technology_enabled[0]=#technology_enabled

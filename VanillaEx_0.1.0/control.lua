@@ -41,50 +41,6 @@ script.on_event(defines.events.on_robot_built_entity, function(event)
 	
 end)
 
-[[--
-script.on_event(defines.events.on_player_mined_entity, function(event)
-	if event.entity.name == "wind-generator" then
-		if global.windGenerators ~= nil then
-			global.windGenerators[event.entity] = nil
-		end
-		
-	elseif event.entity.name == "tidal-generator" then
-		if global.tidalGenerators ~= nil then
-			global.tidalGenerators[event.entity] = nil
-		end
-		
-	end
-end)
-
-script.on_event(defines.events.on_entity_died, function(event)
-	if event.entity.name == "wind-generator" then
-		if global.windGenerators ~= nil then
-			global.windGenerators[event.entity] = nil
-		end
-		
-	elseif event.entity.name == "tidal-generator" then
-		if global.tidalGenerators ~= nil then
-			global.tidalGenerators[event.entity] = nil
-		end
-		
-	end
-end)
-
-script.on_event(defines.events.on_robot_mined_entity, function(event)
-	if event.entity.name == "wind-generator" then
-		if global.windGenerators ~= nil then
-			global.windGenerators[event.entity] = nil
-		end
-		
-	elseif event.entity.name == "tidal-generator" then
-		if global.tidalGenerators ~= nil then
-			global.tidalGenerators[event.entity] = nil
-		end
-		
-	end
-end)
-
---]]
 local offset = 0.5051543
 script.on_event(defines.events.on_tick, function(event)
 	

@@ -24,6 +24,8 @@ if enable_energy then
 require("prototypes.item.item_energy")
 require("prototypes.entity.entity_energy")
 require("prototypes.recipe.recipe_energy")
+require("prototypes.item.fluid_chemistry")
+require("prototypes.recipe.recipe_chemistry")
 end
 
 if enable_defense then
@@ -31,6 +33,7 @@ require("prototypes.item.item_defense")
 require("prototypes.entity.entity_defense")
 require("prototypes.recipe.recipe_defense")
 end
+
 
 require("prototypes.technology.technology")
 

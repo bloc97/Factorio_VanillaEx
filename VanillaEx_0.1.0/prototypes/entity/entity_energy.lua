@@ -1,4 +1,7 @@
 
+data.raw["solar-panel"]["solar-panel"].fast_replaceable_group = "solar-panel"
+data.raw["accumulator"]["accumulator"].fast_replaceable_group = "accumulator"
+
 local hisolar = util.table.deepcopy(data.raw["solar-panel"]["solar-panel"])
 hisolar.name = "high-density-solar"
 hisolar.icon = iconpath.."high-density-solar.png"
@@ -24,6 +27,28 @@ hiaccumulator.picture.filename = modname.."/graphics/entity/basic-accumulator/ba
 hiaccumulator.charge_animation.filename = modname.."/graphics/entity/basic-accumulator/basic-accumulator-charge-animation.png"
 hiaccumulator.discharge_animation.filename = modname.."/graphics/entity/basic-accumulator/basic-accumulator-discharge-animation.png"
 
+local capacitor = util.table.deepcopy(data.raw["accumulator"]["accumulator"])
+capacitor.name = "capacitor"
+capacitor.icon = iconpath.."capacitor.png"
+capacitor.minable.result = "capacitor"
+capacitor.energy_source.buffer_capacity = "800kJ"
+capacitor.energy_source.input_flow_limit = "3.1MW"
+capacitor.energy_source.output_flow_limit = "3.1MW"
+capacitor.picture.filename = modname.."/graphics/entity/basic-accumulator/capacitor.png"
+capacitor.charge_animation.filename = modname.."/graphics/entity/basic-accumulator/capacitor-charge-animation.png"
+capacitor.discharge_animation.filename = modname.."/graphics/entity/basic-accumulator/capacitor-discharge-animation.png"
+
+local fuelcell = util.table.deepcopy(data.raw["accumulator"]["accumulator"])
+fuelcell.name = "fuel-cell"
+fuelcell.icon = iconpath.."fuel-cell.png"
+fuelcell.minable.result = "fuel-cell"
+fuelcell.energy_source.buffer_capacity = "60MJ"
+fuelcell.energy_source.input_flow_limit = "60kW"
+fuelcell.energy_source.output_flow_limit = "120kW"
+fuelcell.picture.filename = modname.."/graphics/entity/basic-accumulator/fuel-cell.png"
+fuelcell.charge_animation.filename = modname.."/graphics/entity/basic-accumulator/fuel-cell-charge-animation.png"
+fuelcell.discharge_animation.filename = modname.."/graphics/entity/basic-accumulator/fuel-cell-discharge-animation.png"
+
 local electricboiler = util.table.deepcopy(data.raw["boiler"]["boiler"])
 electricboiler.name = "boiler-electric"
 electricboiler.minable.result = "boiler-electric"
@@ -33,6 +58,89 @@ electricboiler.energy_source =
       type = "electric",
       usage_priority = "secondary-input"
     }
+	
+local rtg = util.table.deepcopy(data.raw["electric-energy-interface"]["electric-energy-interface"])
+rtg.name = "radioisotope-generator"
+rtg.minable.result = "radioisotope-generator"
+rtg.enable_gui = false
+rtg.allow_copy_paste = false
+rtg.energy_source =
+    {
+      type = "electric",
+      buffer_capacity = "40kJ",
+      usage_priority = "primary-output",
+      input_flow_limit = "0kW",
+      output_flow_limit = "20kW"
+    }
+
+rtg.energy_production = "40kW"
+rtg.picture.tint = {r=1, g=1, b=1, a=1}
+rtg.picture.filename = modname.."/graphics/entity/basic-accumulator/rtgaccumulator.png"
+
+local lowpowerheatexchanger = util.table.deepcopy(data.raw["boiler"]["heat-exchanger"])
+lowpowerheatexchanger.name = "low-power-heat-exchanger"
+lowpowerheatexchanger.energy_consumption = "7.2MW"
+lowpowerheatexchanger.target_temperature = 165
+
+local fusion = util.table.deepcopy(data.raw["reactor"]["nuclear-reactor"])
+fusion.name = "fusion-reactor"
+fusion.minable.result = "fusion-reactor"
+fusion.consumption = "1GW"
+fusion.burner.fuel_category = "thermonuclear"
+fusion.burner.burnt_inventory_size = 0
+fusion.working_light_picture.filename = modname.."/graphics/entity/fusion-reactor/reactor-lights-color.png"
+fusion.working_light_picture.hr_version.filename = modname.."/graphics/entity/fusion-reactor/hr-reactor-lights-color.png"
+fusion.light = {intensity = 1.2, size = 18.1, shift = {0.0, 0.0}, color = {r = 1, g = 0.1, b = 0.2}}
+fusion.heat_buffer.max_temperature = 8000
+fusion.heat_buffer.specific_heat = "10GJ"
+fusion.heat_buffer.max_transfer = "4GW"
+
+
+local thermal = util.table.deepcopy(data.raw["reactor"]["nuclear-reactor"])
+thermal.name = "thermal-generator"
+thermal.minable.result = "thermal-generator"
+thermal.consumption = "20MW"
+thermal.burner =
+    {
+      fuel_category = "chemical",
+      effectivity = 0.7,
+      fuel_inventory_size = 4,
+      emissions = 0.07 / 6.5,
+      smoke =
+      {
+        {
+          name = "smoke",
+          deviation = {0, 0},
+          position = {0.1, -1.3},
+          frequency = 4
+        }
+      }
+    }
+thermal.light = {intensity = 0.8, size = 9.9, shift = {0.0, 0.0}, color = {r = 0.9, g = 0.6, b = 0.2}}
+thermal.heat_buffer.max_temperature = 300
+thermal.heat_buffer.specific_heat = "50MJ"
+thermal.heat_buffer.max_transfer = "1GW"
+thermal.working_light_picture.filename = modname.."/graphics/entity/thermal-generator/reactor-lights-color.png"
+thermal.working_light_picture.hr_version.filename = modname.."/graphics/entity/thermal-generator/hr-reactor-lights-color.png"
+
+
+local oxygenfurnace = util.table.deepcopy(data.raw["furnace"]["electric-furnace"])
+oxygenfurnace.name = "oxygen-furnace"
+oxygenfurnace.energy_usage = "120kW"
+oxygenfurnace.crafting_speed = 4
+oxygenfurnace.energy_source = 
+    {
+      type = "burner",
+      fuel_category = "oxidizer",
+      effectivity = 1,
+      usage_priority = "secondary-input",
+	  fuel_inventory_size = 1,
+      emissions = 0.005
+    }
+oxygenfurnace.working_visualisations[1].animation.filename = modname.."/graphics/entity/oxygen-furnace/oxygen-furnace-heater.png"
+oxygenfurnace.working_visualisations[1].animation.hr_version.filename = modname.."/graphics/entity/oxygen-furnace/hr-oxygen-furnace-heater.png"
+
+
 
 local windgenerator = {
       type = "generator",
@@ -122,6 +230,7 @@ local wind = {
       order = "a[fluid]-x",
       pressure_to_speed_ratio = 0.4,
       flow_to_energy_ratio = 1,
+      auto_barrel = false
     }
 
 local tidegenerator = {
@@ -208,8 +317,9 @@ local tide = {
       order = "a[fluid]-x",
       pressure_to_speed_ratio = 0.4,
       flow_to_energy_ratio = 1,
+      auto_barrel = false
     }
 
 data:extend({
-hisolar, stackedsolar, hiaccumulator, electricboiler, windgenerator, wind, tidegenerator, tide
+hisolar, stackedsolar, hiaccumulator, electricboiler, windgenerator, wind, tidegenerator, tide, thermal, lowpowerheatexchanger, rtg, oxygenfurnace, fusion, capacitor, fuelcell
 })

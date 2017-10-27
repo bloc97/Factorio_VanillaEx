@@ -13,6 +13,14 @@ ingredients={{"steel-plate", 4},{"high-density-solar", 1},{"solar-panel", 1},{"p
 energy=5,
 ingredients={{"accumulator", 2},{"advanced-circuit", 2}},
 },
+{result="capacitor",
+energy=5,
+ingredients={{"iron-plate", 4},{"copper-plate", 4},{"coolant", 5},{"electronic-circuit", 2}},
+},
+{result="fuel-cell",
+energy=10,
+ingredients={{"iron-plate", 2},{"copper-plate", 4},{"oxidizer", 5},{"electronic-circuit", 2}},
+},
 {result="boiler-electric",
 energy=0.5,
 ingredients={{"boiler", 1},{"copper-plate", 4},{"electronic-circuit", 8}},
@@ -24,7 +32,37 @@ ingredients={{"steel-plate", 16},{"copper-plate", 8},{"advanced-circuit", 8}},
 {result="tidal-generator",
 energy=8,
 ingredients={{"steel-plate", 10},{"copper-plate", 16},{"advanced-circuit", 8}},
-}
+},
+{result="radioisotope-generator",
+energy=5,
+ingredients={{"steel-plate", 8},{"copper-plate", 8},{"advanced-circuit", 20},{"uranium-fuel-cell", 5}},
+},
+{result="low-power-heat-exchanger",
+ingredients={{"steel-plate", 10}, {"copper-plate", 20}, {"pipe", 10}},
+},
+{result="thermal-generator",
+energy=4,
+ingredients={
+      {"steel-plate", 100},
+      {"advanced-circuit", 50},
+      {"copper-plate", 200}}
+},
+{result="oxygen-furnace",
+energy=5,
+ingredients={
+      {"steel-furnace", 1},
+      {"copper-plate", 20}}
+},
+{result="fusion-reactor",
+energy=5,
+ingredients={
+      {"concrete", 2000},
+      {"steel-plate", 1000},
+      {"processing-unit", 500},
+      {"copper-plate", 1000}
+	  }
+},
+
 
 }
 
