@@ -95,6 +95,101 @@ fusion.heat_buffer.max_temperature = 8000
 fusion.heat_buffer.specific_heat = "10GJ"
 fusion.heat_buffer.max_transfer = "4GW"
 
+local logisticx2 = util.table.deepcopy(data.raw["logistic-container"]["logistic-chest-storage"])
+logisticx2.name = "logistic-chest-storage-large"
+logisticx2.minable.result = "logistic-chest-storage-large"
+logisticx2.minable.mining_time = logisticx2.minable.mining_time * 4
+logisticx2.max_health = logisticx2.max_health * 4
+logisticx2.corpse = "medium-remnants"
+logisticx2.collision_box = {{-0.35 * 2, -0.35 * 2}, {0.35 * 2, 0.35 * 2}}
+logisticx2.selection_box = {{-0.5 * 2, -0.5 * 2}, {0.5 * 2, 0.5 * 2}}
+logisticx2.inventory_size = 48 * 4
+logisticx2.circuit_wire_max_distance = 9 + 2
+logisticx2.picture =
+    {
+      filename = modname.."/graphics/entity/logistic-chest/logistic-chest-storage-x2.png",
+      priority = "extra-high",
+      width = 38 * 2,
+      height = 32 * 2,
+      shift = {0.09375 * 2, 0}
+    }
+
+
+
+require("transport-belt-pictures")
+
+
+
+local sonicbelt = util.table.deepcopy(data.raw["transport-belt"]["express-transport-belt"])
+sonicbelt.name = "sonic-transport-belt"
+sonicbelt.icon = toicon("sonic-transport-belt")
+sonicbelt.max_health = 180
+sonicbelt.minable.result = "sonic-transport-belt"
+sonicbelt.speed = 0.125
+sonicbelt.animations.filename = modname.."/graphics/entity/sonic-transport-belt/sonic-transport-belt.png"
+sonicbelt.animations.hr_version.filename = modname.."/graphics/entity/sonic-transport-belt/hr-sonic-transport-belt.png"
+
+sonicbelt.belt_horizontal = sonic_belt_horizontal -- specified in transport-belt-pictures.lua
+sonicbelt.belt_vertical = sonic_belt_vertical
+sonicbelt.ending_top = sonic_belt_ending_top
+sonicbelt.ending_bottom = sonic_belt_ending_bottom
+sonicbelt.ending_side = sonic_belt_ending_side
+sonicbelt.starting_top = sonic_belt_starting_top
+sonicbelt.starting_bottom = sonic_belt_starting_bottom
+sonicbelt.starting_side = sonic_belt_starting_side
+
+
+
+local sonicundergroundbelt = util.table.deepcopy(data.raw["underground-belt"]["express-underground-belt"])
+sonicundergroundbelt.name = "sonic-underground-belt"
+sonicundergroundbelt.icon = toicon("sonic-underground-belt")
+sonicundergroundbelt.max_health = 180
+sonicundergroundbelt.minable.result = "sonic-underground-belt"
+sonicundergroundbelt.speed = 0.125
+sonicundergroundbelt.max_distance = 11
+sonicundergroundbelt.belt_horizontal = sonic_belt_horizontal -- specified in transport-belt-pictures.lua
+sonicundergroundbelt.belt_vertical = sonic_belt_vertical
+sonicundergroundbelt.ending_top = sonic_belt_ending_top
+sonicundergroundbelt.ending_bottom = sonic_belt_ending_bottom
+sonicundergroundbelt.ending_side = sonic_belt_ending_side
+sonicundergroundbelt.starting_top = sonic_belt_starting_top
+sonicundergroundbelt.starting_bottom = sonic_belt_starting_bottom
+sonicundergroundbelt.starting_side = sonic_belt_starting_side
+sonicundergroundbelt.structure.direction_in.sheet.filename = modname.."/graphics/entity/sonic-underground-belt/sonic-underground-belt-structure.png"
+sonicundergroundbelt.structure.direction_in.sheet.hr_version.filename = modname.."/graphics/entity/sonic-underground-belt/hr-sonic-underground-belt-structure.png"
+sonicundergroundbelt.structure.direction_out.sheet.filename = modname.."/graphics/entity/sonic-underground-belt/sonic-underground-belt-structure.png"
+sonicundergroundbelt.structure.direction_out.sheet.hr_version.filename = modname.."/graphics/entity/sonic-underground-belt/hr-sonic-underground-belt-structure.png"
+
+
+
+local sonicsplitter = util.table.deepcopy(data.raw["splitter"]["express-splitter"])
+sonicsplitter.name = "sonic-splitter"
+sonicsplitter.icon = toicon("sonic-splitter")
+sonicsplitter.max_health = 200
+sonicsplitter.minable.result = "sonic-splitter"
+sonicsplitter.speed = 0.125
+sonicsplitter.belt_horizontal = sonic_belt_horizontal -- specified in transport-belt-pictures.lua
+sonicsplitter.belt_vertical = sonic_belt_vertical
+sonicsplitter.ending_top = sonic_belt_ending_top
+sonicsplitter.ending_bottom = sonic_belt_ending_bottom
+sonicsplitter.ending_side = sonic_belt_ending_side
+sonicsplitter.starting_top = sonic_belt_starting_top
+sonicsplitter.starting_bottom = sonic_belt_starting_bottom
+sonicsplitter.starting_side = sonic_belt_starting_side
+sonicsplitter.structure.north.filename = modname.."/graphics/entity/sonic-splitter/sonic-splitter-north.png"
+sonicsplitter.structure.north.hr_version.filename = modname.."/graphics/entity/sonic-splitter/hr-sonic-splitter-north.png"
+sonicsplitter.structure.east.filename = modname.."/graphics/entity/sonic-splitter/sonic-splitter-east.png"
+sonicsplitter.structure.east.hr_version.filename = modname.."/graphics/entity/sonic-splitter/hr-sonic-splitter-east.png"
+sonicsplitter.structure.south.filename = modname.."/graphics/entity/sonic-splitter/sonic-splitter-south.png"
+sonicsplitter.structure.south.hr_version.filename = modname.."/graphics/entity/sonic-splitter/hr-sonic-splitter-south.png"
+sonicsplitter.structure.west.filename = modname.."/graphics/entity/sonic-splitter/sonic-splitter-west.png"
+sonicsplitter.structure.west.hr_version.filename = modname.."/graphics/entity/sonic-splitter/hr-sonic-splitter-west.png"
+
+
+
+
+
+	
 
 local thermal = util.table.deepcopy(data.raw["reactor"]["nuclear-reactor"])
 thermal.name = "thermal-generator"
@@ -139,6 +234,11 @@ oxygenfurnace.energy_source =
     }
 oxygenfurnace.working_visualisations[1].animation.filename = modname.."/graphics/entity/oxygen-furnace/oxygen-furnace-heater.png"
 oxygenfurnace.working_visualisations[1].animation.hr_version.filename = modname.."/graphics/entity/oxygen-furnace/hr-oxygen-furnace-heater.png"
+
+
+
+
+
 
 
 
@@ -321,5 +421,6 @@ local tide = {
     }
 
 data:extend({
-hisolar, stackedsolar, hiaccumulator, electricboiler, windgenerator, wind, tidegenerator, tide, thermal, lowpowerheatexchanger, rtg, oxygenfurnace, fusion, capacitor, fuelcell
+hisolar, stackedsolar, hiaccumulator, electricboiler, windgenerator, wind, tidegenerator, tide, thermal, lowpowerheatexchanger, rtg, oxygenfurnace, fusion, capacitor, fuelcell,
+logisticx2, sonicbelt, sonicundergroundbelt, sonicsplitter
 })

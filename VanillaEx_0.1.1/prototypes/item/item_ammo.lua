@@ -120,6 +120,14 @@ item_ammo[16].name="corrosive-rocket"
 item_ammo[16].ammo_type.action.action_delivery.projectile="corrosive-rocket"
 item_ammo[16].order="d[rocket-launcher]-b[corrosive]"
 
+item_ammo[17]=util.table.deepcopy(data.raw["ammo"]["atomic-bomb"])
+item_ammo[17].name="thermonuclear-weapon"
+item_ammo[17].ammo_type.range_modifier = 10
+item_ammo[17].ammo_type.cooldown_modifier = 10
+item_ammo[17].ammo_type.action.action_delivery.projectile="thermonuclear-weapon"
+item_ammo[17].order="d[rocket-launcher]-d[thermonuclear-weapon]"
+item_ammo[17].stack_size=1
+
 item_ammo[0]=#item_ammo
 
 

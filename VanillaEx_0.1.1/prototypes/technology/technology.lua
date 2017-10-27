@@ -198,9 +198,10 @@ table.insert(technology_enabled, fusion)
 
 local thermonuclear = {name="thermonuclear",icon=modname.."/graphics/technology/thermonuclear.png",
 effects={
+		{type = "unlock-recipe",recipe = "thermonuclear-weapon"}
 		},
 prereq={"nuclear-fusion","atomic-bomb"},
-ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"military-science-pack", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"military-science-pack", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}},
 count=10000,time_r=100,
 order="a-e-h",
 }
@@ -236,7 +237,10 @@ table.insert(technology_enabled, advmatproc3)
 
 local logistics4 = {name="logistics-4",icon="__base__/graphics/technology/logistics.png",
 effects={
---Warehouses, belt 4
+		{type = "unlock-recipe",recipe = "sonic-transport-belt"},
+		{type = "unlock-recipe",recipe = "sonic-underground-belt"},
+		{type = "unlock-recipe",recipe = "sonic-splitter"},
+		{type = "unlock-recipe",recipe = "logistic-chest-storage-large"},
 		},
 prereq={"logistics-3","advanced-chemistry","logistic-system"},
 ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}},

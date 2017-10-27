@@ -163,8 +163,8 @@ local hydrogenfuel = {
     {
       {"iron-plate", 10},
       {"coolant", 2},
-      {type="fluid", name="heavywater", amount=1},
-      {type="fluid", name="superheavywater", amount=1}
+      {type="fluid", name="heavywater", amount=250},
+      {type="fluid", name="superheavywater", amount=250}
     },
     result = "hydrogen-fuel-cell",
     result_count = 10

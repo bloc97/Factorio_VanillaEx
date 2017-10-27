@@ -62,6 +62,37 @@ ingredients={
       {"copper-plate", 1000}
 	  }
 },
+{result="sonic-transport-belt",
+energy=0.5,
+ingredients={
+      {"iron-gear-wheel", 20},
+      {"express-transport-belt", 2},
+      {"coolant", 1}
+	  }
+},
+{result="sonic-underground-belt",
+energy=0.5,
+result_count = 2,
+ingredients={
+      {"iron-gear-wheel", 160},
+      {"express-underground-belt", 4},
+      {"coolant", 2}
+	  }
+},
+{result="sonic-splitter",
+energy=2,
+ingredients={
+      {"express-splitter", 2},
+      {"iron-gear-wheel", 20},
+      {"processing-unit", 4},
+      {"coolant", 1}
+	  }
+},
+{result="logistic-chest-storage-large",
+ingredients={
+      {"logistic-chest-storage", 4},
+	  }
+},
 
 
 }
@@ -79,8 +110,9 @@ data:extend(
     enabled = false,
     energy_required = recipe_energy[i].energy,
     ingredients = recipe_energy[i].ingredients,
-    result = recipe_energy[i].result
-  },
+    result = recipe_energy[i].result,
+	result_count = recipe_energy[i].result_count
+  }
 
 }
 )

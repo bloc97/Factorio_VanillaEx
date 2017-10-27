@@ -108,6 +108,14 @@ ingredients={{"rocket", 1},{"acid-canister", 2}},
 energy=5,
 ingredients={{"steel-plate", 1},{"acid-canister", 2}},
 },
+{result="thermonuclear-weapon",
+energy_required = 100,
+ingredients={
+      {"atomic-bomb", 1},
+      {"heavywater-barrel", 50},
+      {"superheavywater-barrel", 50},
+	  }
+},
 }
 
 recipe_military[0]=#recipe_military

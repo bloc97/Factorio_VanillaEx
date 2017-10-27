@@ -74,7 +74,7 @@ entity_projectile[7].action={type = "direct",action_delivery ={type = "instant",
 			{type = "create-entity",entity_name = "explosion"},
 			{type = "damage",damage = { amount = 400 , type = "physical"}},
 			{type = "damage",damage = { amount = 100 , type = "explosion"}},}}}
-entity_projectile[7].final_action={type = "area",perimeter=1,action_delivery ={type = "instant",target_effects ={
+entity_projectile[7].final_action={type = "area",perimeter=2,action_delivery ={type = "instant",target_effects ={
 			{type = "damage",damage = {amount = 400, type = "explosion"}},
 			{type = "create-entity",entity_name = "explosion"},}}}
 
@@ -85,9 +85,57 @@ entity_projectile[8].piercing_damage=0
 entity_projectile[8].action={type = "direct",action_delivery ={type = "instant",target_effects ={
 			{type = "create-entity",entity_name = "small-scorchmark",check_buildability = true},
 			{type = "create-entity",entity_name = "big-explosion"},}}}
-entity_projectile[8].final_action={type = "area",perimeter=10,action_delivery ={type = "instant",target_effects ={
+entity_projectile[8].final_action={type = "area",perimeter=6,action_delivery ={type = "instant",target_effects ={
 			{type = "damage",damage = {amount = 200, type = "explosion"}},
 			{type = "create-entity",entity_name = "explosion"},}}}
+	
+	
+local thermonuclear = util.table.deepcopy(data.raw["projectile"]["atomic-rocket"])
+thermonuclear.name = "thermonuclear-weapon"
+thermonuclear.acceleration = 0.001
+thermonuclear.action.action_delivery.target_effects[1].repeat_count = 1000
+thermonuclear.action.action_delivery.target_effects[1].speed_from_center = 0.6
+thermonuclear.action.action_delivery.target_effects[3].damage.amount = 4000
+thermonuclear.action.action_delivery.target_effects[5].action.repeat_count = 4000
+thermonuclear.action.action_delivery.target_effects[5].action.perimeter = 90
+thermonuclear.action.action_delivery.target_effects[5].action.action_delivery.projectile = "thermonuclear-weapon-wave"
+thermonuclear.action.action_delivery.target_effects[6] = 
+          {
+            type = "nested-result",
+            action =
+            {
+              type = "area",
+              target_entities = false,
+              repeat_count = 2000,
+              perimeter = 200,
+              action_delivery =
+              {
+                type = "projectile",
+                projectile = "thermonuclear-weapon-wave-small",
+                starting_speed = 0.5
+              }
+            }
+          }
+
+
+entity_projectile[9] = thermonuclear
+
+
+local thermonuclearwave = util.table.deepcopy(data.raw["projectile"]["atomic-bomb-wave"])
+thermonuclearwave.name = "thermonuclear-weapon-wave"
+thermonuclearwave.action[2].perimeter = 7
+thermonuclearwave.action[2].action_delivery.target_effects.damage.amount = 2000
+
+entity_projectile[10] = thermonuclearwave
+
+local thermonuclearwavesmall = util.table.deepcopy(data.raw["projectile"]["atomic-bomb-wave"])
+thermonuclearwavesmall.name = "thermonuclear-weapon-wave-small"
+thermonuclearwavesmall.action[2].perimeter = 7
+thermonuclearwavesmall.action[2].action_delivery.target_effects.damage.amount = 1200
+
+entity_projectile[11] = thermonuclearwavesmall
+
+	
 	
 entity_projectile[0]=#entity_projectile -- Finds size of table (# of projectiles)
 

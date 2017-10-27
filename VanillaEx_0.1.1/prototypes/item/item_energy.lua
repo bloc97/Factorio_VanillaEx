@@ -58,6 +58,26 @@ local fuelcell=util.table.deepcopy(data.raw["item"]["solar-panel"])
 fuelcell.name="fuel-cell"
 fuelcell.order="e[accumulator]-a[accumulator]-c"
 item_energy[13] = fuelcell
+
+local logisticx2=util.table.deepcopy(data.raw["item"]["logistic-chest-storage"])
+logisticx2.name="logistic-chest-storage-large"
+logisticx2.order="b[storage]-c[logistic-chest-storage]-a"
+item_energy[14] = logisticx2
+
+local sonicbelt = util.table.deepcopy(data.raw["item"]["express-transport-belt"])
+sonicbelt.name="sonic-transport-belt"
+sonicbelt.order=sonicbelt.order .. "-a"
+item_energy[15] = sonicbelt
+  
+local sonicundergroundbelt = util.table.deepcopy(data.raw["item"]["express-underground-belt"])
+sonicundergroundbelt.name="sonic-underground-belt"
+sonicundergroundbelt.sonicundergroundbelt=sonicundergroundbelt.order .. "-a"
+item_energy[16] = sonicundergroundbelt
+
+local sonicsplitter = util.table.deepcopy(data.raw["item"]["express-splitter"])
+sonicsplitter.name="sonic-splitter"
+sonicsplitter.order=sonicsplitter.order .. "-a"
+item_energy[17] = sonicsplitter
   
 item_energy[0]=#item_energy
 
