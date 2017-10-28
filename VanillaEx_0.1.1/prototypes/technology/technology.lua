@@ -130,8 +130,8 @@ technology_all[6]={name="dense-solar",icon=modname.."/graphics/technology/dense-
 effects={
 		{type = "unlock-recipe",recipe = "high-density-solar"},
 		},
-prereq={"advanced-electronics-2","solar-energy","laser"},
-ingredients={{"science-pack-1", 1},{"science-pack-2", 1},},
+prereq={"solar-energy","laser"},
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
 count=300,time_r=40,
 order="a-h-d",
 }
@@ -165,8 +165,8 @@ effects={
 		{type = "unlock-recipe",recipe = "tidal-generator"},
 		},
 prereq={"solar-energy","electric-engine"},
-ingredients={{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
-count=400,time_r=60,
+ingredients={{"science-pack-1", 1},{"science-pack-2", 1}},
+count=400,time_r=40,
 order="a-h-e",
 }
 table.insert(technology_enabled, windGenerator)

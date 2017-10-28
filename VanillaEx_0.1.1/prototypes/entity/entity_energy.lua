@@ -14,7 +14,7 @@ stackedsolar.name = "stacked-density-solar"
 stackedsolar.icon = iconpath.."stacked-density-solar.png"
 stackedsolar.minable.result = "stacked-density-solar"
 stackedsolar.picture.filename = modname.."/graphics/entity/solar-panel/stacked-solar.png"
-stackedsolar.production = "200kW"
+stackedsolar.production = "240kW"
 
 local hiaccumulator = util.table.deepcopy(data.raw["accumulator"]["accumulator"])
 hiaccumulator.name = "accumulator2"
