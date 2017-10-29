@@ -5,7 +5,7 @@ require "perlin"
 script.on_event(defines.events.on_built_entity, function(event)
 
 		
-	if event.created_entity.name == "wind-generator" then
+	if event.created_entity.name == "wind-generator" and event.created_entity.surface.name == "nauvis" then
 		if global.windGenerators == nil then
 			global.windGenerators = {}
 		end
@@ -24,7 +24,7 @@ end)
 
 script.on_event(defines.events.on_robot_built_entity, function(event)
 
-	if event.created_entity.name == "wind-generator" then
+	if event.created_entity.name == "wind-generator" and event.created_entity.surface.name == "nauvis" then
 		if global.windGenerators == nil then
 			global.windGenerators = {}
 		end
