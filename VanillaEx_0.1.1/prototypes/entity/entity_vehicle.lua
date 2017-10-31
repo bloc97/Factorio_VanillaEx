@@ -38,7 +38,7 @@ entity_vehicle[3].turret_rotation_speed=0.45 / 60
 entity_vehicle[3].rotation_speed=0.0035
 entity_vehicle[3].weight=18000
 entity_vehicle[3].inventory_size=60
-entity_vehicle[3].guns={"tank-autocannon","tank-flakcannon"}
+entity_vehicle[3].guns={"tank-autocannon","tank-flakcannon","tank-machine-gun"}
 
 entity_vehicle[4]=util.table.deepcopy(data.raw["car"]["tank"])
 entity_vehicle[4].name="car-armour"
@@ -96,7 +96,7 @@ entity_vehicle[6].turret_rotation_speed=0.45 / 60
 entity_vehicle[6].rotation_speed=0.0055
 entity_vehicle[6].weight=40000
 entity_vehicle[6].inventory_size=100
-entity_vehicle[6].guns={"tank-mb-cannon","tank-rocket"}
+entity_vehicle[6].guns={"tank-mb-cannon","tank-rocket","tank-machine-gun"}
 entity_vehicle[6].animation.layers[1].stripes[1].filename = entitypath.."tank/mbt-base-1.png"
 entity_vehicle[6].animation.layers[1].stripes[2].filename = entitypath.."tank/mbt-base-2.png"
 entity_vehicle[6].animation.layers[1].stripes[3].filename = entitypath.."tank/mbt-base-3.png"
