@@ -16,7 +16,7 @@ entity_projectile[2].piercing_damage=0
 entity_projectile[2].action={type = "direct",action_delivery ={type = "instant",target_effects ={
 			{type = "create-entity",entity_name = "small-scorchmark",check_buildability = true},
 			{type = "create-entity",entity_name = "explosion"},}}}
-entity_projectile[2].final_action={type = "area",perimeter=2,action_delivery ={type = "instant",target_effects ={
+entity_projectile[2].final_action={type = "area",radius=2,action_delivery ={type = "instant",target_effects ={
 			{type = "damage",damage = {amount = 20, type = "explosion"}},{type = "create-entity",entity_name = "explosion"},}}}
 
 entity_projectile[3]=util.table.deepcopy(data.raw["projectile"]["cannon-projectile"])
@@ -25,7 +25,7 @@ entity_projectile[3].direction_only=false
 entity_projectile[3].piercing_damage=0
 entity_projectile[3].action={type = "direct",action_delivery ={type = "instant",target_effects ={
 			{type = "create-entity",entity_name = "explosion"},}}}
-entity_projectile[3].final_action={type = "area",perimeter=4,action_delivery ={type = "instant",target_effects ={
+entity_projectile[3].final_action={type = "area",radius=4,action_delivery ={type = "instant",target_effects ={
 			{type = "damage",damage = {amount = 8, type = "explosion"}},
 			{type = "damage",damage = {amount = 2, type = "impact"}},
 			{type = "create-entity",entity_name = "explosion"},}}}
@@ -38,7 +38,7 @@ entity_projectile[4].piercing_damage=0
 entity_projectile[4].action={type = "direct",action_delivery ={type = "instant",target_effects ={
 			{type = "create-entity",entity_name = "small-scorchmark",check_buildability = true},
 			{type = "create-entity",entity_name = "big-explosion"},}}}
-entity_projectile[4].final_action={type = "area",perimeter=6,action_delivery ={type = "instant",target_effects ={
+entity_projectile[4].final_action={type = "area",radius=6,action_delivery ={type = "instant",target_effects ={
 			{type = "damage",damage = {amount = 80, type = "explosion"}},
 			{type = "damage",damage = {amount = 80, type = "physical"}},
 			{type = "create-entity",entity_name = "explosion"},}}}
@@ -53,7 +53,7 @@ entity_projectile[5].action={type = "direct",action_delivery ={type = "instant",
 			{type = "create-entity",entity_name = "medium-explosion"},
 			{type = "create-entity",entity_name = "big-explosion"},
 			{type = "create-entity",entity_name = "massive-explosion"},}}}
-entity_projectile[5].final_action={type = "area",perimeter=10,action_delivery ={type = "instant",target_effects ={
+entity_projectile[5].final_action={type = "area",radius=10,action_delivery ={type = "instant",target_effects ={
 			{type = "damage",damage = {amount = 160, type = "explosion"}},
 			{type = "create-entity",entity_name = "explosion"},}}}
 			
@@ -74,7 +74,7 @@ entity_projectile[7].action={type = "direct",action_delivery ={type = "instant",
 			{type = "create-entity",entity_name = "explosion"},
 			{type = "damage",damage = { amount = 400 , type = "physical"}},
 			{type = "damage",damage = { amount = 100 , type = "explosion"}},}}}
-entity_projectile[7].final_action={type = "area",perimeter=2,action_delivery ={type = "instant",target_effects ={
+entity_projectile[7].final_action={type = "area",radius=2,action_delivery ={type = "instant",target_effects ={
 			{type = "damage",damage = {amount = 400, type = "explosion"}},
 			{type = "create-entity",entity_name = "explosion"},}}}
 
@@ -85,7 +85,7 @@ entity_projectile[8].piercing_damage=0
 entity_projectile[8].action={type = "direct",action_delivery ={type = "instant",target_effects ={
 			{type = "create-entity",entity_name = "small-scorchmark",check_buildability = true},
 			{type = "create-entity",entity_name = "big-explosion"},}}}
-entity_projectile[8].final_action={type = "area",perimeter=6,action_delivery ={type = "instant",target_effects ={
+entity_projectile[8].final_action={type = "area",radius=6,action_delivery ={type = "instant",target_effects ={
 			{type = "damage",damage = {amount = 200, type = "explosion"}},
 			{type = "create-entity",entity_name = "explosion"},}}}
 	
@@ -97,7 +97,7 @@ thermonuclear.action.action_delivery.target_effects[1].repeat_count = 1000
 thermonuclear.action.action_delivery.target_effects[1].speed_from_center = 0.6
 thermonuclear.action.action_delivery.target_effects[3].damage.amount = 4000
 thermonuclear.action.action_delivery.target_effects[5].action.repeat_count = 4000
-thermonuclear.action.action_delivery.target_effects[5].action.perimeter = 90
+thermonuclear.action.action_delivery.target_effects[5].action.radius = 90
 thermonuclear.action.action_delivery.target_effects[5].action.action_delivery.projectile = "thermonuclear-weapon-wave"
 thermonuclear.action.action_delivery.target_effects[6] = 
           {
@@ -107,7 +107,7 @@ thermonuclear.action.action_delivery.target_effects[6] =
               type = "area",
               target_entities = false,
               repeat_count = 2000,
-              perimeter = 200,
+              radius = 200,
               action_delivery =
               {
                 type = "projectile",
@@ -123,14 +123,14 @@ entity_projectile[9] = thermonuclear
 
 local thermonuclearwave = util.table.deepcopy(data.raw["projectile"]["atomic-bomb-wave"])
 thermonuclearwave.name = "thermonuclear-weapon-wave"
-thermonuclearwave.action[2].perimeter = 7
+thermonuclearwave.action[2].radius = 7
 thermonuclearwave.action[2].action_delivery.target_effects.damage.amount = 2000
 
 entity_projectile[10] = thermonuclearwave
 
 local thermonuclearwavesmall = util.table.deepcopy(data.raw["projectile"]["atomic-bomb-wave"])
 thermonuclearwavesmall.name = "thermonuclear-weapon-wave-small"
-thermonuclearwavesmall.action[2].perimeter = 7
+thermonuclearwavesmall.action[2].radius = 7
 thermonuclearwavesmall.action[2].action_delivery.target_effects.damage.amount = 1200
 
 entity_projectile[11] = thermonuclearwavesmall

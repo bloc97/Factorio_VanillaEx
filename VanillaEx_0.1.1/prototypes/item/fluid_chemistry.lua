@@ -7,6 +7,7 @@ local nitrogen = {
     base_color = {r=0.7, g=0.7, b=0.72},
     flow_color = {r=0.9, g=0.9, b=0.92},
     icon = toicon("nitrogen"),
+	icon_size = 32,
     order = "a[fluid]-za",
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59
@@ -21,6 +22,7 @@ local oxygen = {
     base_color = {r=0.7, g=0.7, b=1},
     flow_color = {r=0.9, g=0.9, b=1},
     icon = toicon("oxygen"),
+	icon_size = 32,
     order = "a[fluid]-zb",
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59
@@ -35,6 +37,7 @@ local hydrogen = {
     base_color = {r=0.9, g=0.9, b=9},
     flow_color = {r=1, g=1, b=1},
     icon = toicon("hydrogen"),
+	icon_size = 32,
     order = "a[fluid]-zc",
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59
@@ -50,6 +53,7 @@ local heavywater = {
     base_color = {r=0, g=0.24, b=0.5},
     flow_color = {r=0.6, g=0.6, b=0.7},
     icon = toicon("heavywater"),
+	icon_size = 32,
     order = "a[fluid]-a[water]-b",
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59
@@ -59,6 +63,7 @@ local firstaid = {
     type = "capsule",
     name = "first-aid-kit",
     icon = toicon("first-aid"),
+	icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "capsule",
     capsule_action =
@@ -98,6 +103,7 @@ local oxidizer = {
     type = "item",
     name = "oxidizer",
     icon = toicon("oxidizer"),
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     fuel_category = "oxidizer",
     fuel_value = "8MJ",
@@ -110,6 +116,7 @@ local coolant = {
     type = "item",
     name = "coolant",
     icon = toicon("coolant"),
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "intermediate-product",
     order = "j[acid-canister]-a[coolant]",
@@ -120,6 +127,7 @@ local hydrogenfuel = {
     type = "item",
     name = "hydrogen-fuel-cell",
     icon = toicon("hydrogen-fuel-cell"),
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     fuel_category = "thermonuclear",
     fuel_value = "1.2TJ",
@@ -137,6 +145,7 @@ local superheavywater = {
     base_color = {r=0, g=0.44, b=0.5},
     flow_color = {r=0.6, g=0.7, b=0.6},
     icon = toicon("superheavywater"),
+	icon_size = 32,
     order = "a[fluid]-a[water]-c",
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59

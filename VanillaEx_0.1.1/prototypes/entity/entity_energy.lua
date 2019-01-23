@@ -246,6 +246,7 @@ local windgenerator = {
       type = "generator",
       name = "wind-generator",
       icon = toicon("wind-generator"),
+	  icon_size=32,
       flags = {"placeable-neutral","player-creation"},
       minable = {mining_time = 1, result = "wind-generator"},
       max_health = 400,
@@ -276,7 +277,8 @@ local windgenerator = {
         height = 1,
         base_level = -1,
 		pipe_connections = {},
-        production_type = "input-output"
+        production_type = "input-output",
+		filter = "wind"
       },
 	  fluid_input = {
 		name = "wind",
@@ -327,6 +329,7 @@ local wind = {
       base_color = {r=0, g=0.34, b=0.6},
       flow_color = {r=0.7, g=0.7, b=0.7},
       icon = toicon("wind"),
+	  icon_size=32,
       order = "a[fluid]-x",
       pressure_to_speed_ratio = 0.4,
       flow_to_energy_ratio = 1,
@@ -337,6 +340,7 @@ local tidegenerator = {
       type = "generator",
       name = "tidal-generator",
       icon = toicon("tidal-generator"),
+	  icon_size=32,
       flags = {"placeable-neutral","player-creation"},
       minable = {mining_time = 1, result = "tidal-generator"},
       max_health = 100,
@@ -364,7 +368,8 @@ local tidegenerator = {
         height = 1,
         base_level = -1,
 		pipe_connections = {},
-        production_type = "input-output"
+        production_type = "input-output",
+		filter = "tide"
       },
       energy_source =
       {
@@ -414,6 +419,7 @@ local tide = {
       base_color = {r=0, g=0.34, b=0.6},
       flow_color = {r=0.7, g=0.7, b=0.7},
       icon = toicon("wave"),
+	  icon_size=32,
       order = "a[fluid]-x",
       pressure_to_speed_ratio = 0.4,
       flow_to_energy_ratio = 1,

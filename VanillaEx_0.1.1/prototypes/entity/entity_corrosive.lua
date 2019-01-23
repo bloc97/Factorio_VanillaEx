@@ -5,6 +5,7 @@ data:extend({
     type = "land-mine",
     name = "corrosive-mine",
     icon = toicon("corrosive-mine"),
+	icon_size=32,
     flags =
     {
       "placeable-player",
@@ -49,7 +50,7 @@ data:extend({
             action =
             {
               type = "area",
-              perimeter = 10,
+              radius = 10,
               force = "enemy",
               action_delivery =
               {
