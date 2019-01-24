@@ -154,6 +154,11 @@ nuclear_warhead.action.action_delivery.target_effects[1] =
               speed_deviation = 0.2
           }
 table.insert(nuclear_warhead.action.action_delivery.target_effects, 
+          {
+            type = "damage",
+            damage = {amount = 400, type = "explosion"}
+          })
+table.insert(nuclear_warhead.action.action_delivery.target_effects, 
 		  {
             type = "nested-result",
             action =

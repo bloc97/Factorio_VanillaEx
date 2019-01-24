@@ -79,7 +79,7 @@ rtg.picture.filename = modname.."/graphics/entity/basic-accumulator/rtgaccumulat
 
 local lowpowerheatexchanger = util.table.deepcopy(data.raw["boiler"]["heat-exchanger"])
 lowpowerheatexchanger.name = "low-power-heat-exchanger"
-lowpowerheatexchanger.energy_consumption = "7.2MW"
+lowpowerheatexchanger.energy_consumption = "4.5MW"
 lowpowerheatexchanger.target_temperature = 165
 
 local fusion = util.table.deepcopy(data.raw["reactor"]["nuclear-reactor"])
@@ -92,8 +92,8 @@ fusion.working_light_picture.filename = modname.."/graphics/entity/fusion-reacto
 fusion.working_light_picture.hr_version.filename = modname.."/graphics/entity/fusion-reactor/hr-reactor-lights-color.png"
 fusion.light = {intensity = 1.2, size = 18.1, shift = {0.0, 0.0}, color = {r = 1, g = 0.1, b = 0.2}}
 fusion.heat_buffer.max_temperature = 8000
-fusion.heat_buffer.specific_heat = "10GJ"
-fusion.heat_buffer.max_transfer = "4GW"
+fusion.heat_buffer.specific_heat = "250MJ"
+--fusion.heat_buffer.max_transfer = "4GW"
 
 local logisticx2 = util.table.deepcopy(data.raw["logistic-container"]["logistic-chest-storage"])
 logisticx2.name = "logistic-chest-storage-large"
@@ -194,11 +194,11 @@ sonicsplitter.structure.west.hr_version.filename = modname.."/graphics/entity/so
 local thermal = util.table.deepcopy(data.raw["reactor"]["nuclear-reactor"])
 thermal.name = "thermal-generator"
 thermal.minable.result = "thermal-generator"
-thermal.consumption = "20MW"
+thermal.consumption = "18MW"
 thermal.burner =
     {
       fuel_category = "chemical",
-      effectivity = 0.7,
+      effectivity = 0.75,
       fuel_inventory_size = 4,
       emissions = 0.07 / 6.5,
       smoke =
@@ -212,9 +212,9 @@ thermal.burner =
       }
     }
 thermal.light = {intensity = 0.8, size = 9.9, shift = {0.0, 0.0}, color = {r = 0.9, g = 0.6, b = 0.2}}
-thermal.heat_buffer.max_temperature = 300
-thermal.heat_buffer.specific_heat = "50MJ"
-thermal.heat_buffer.max_transfer = "1GW"
+thermal.heat_buffer.max_temperature = 450
+thermal.heat_buffer.specific_heat = "5MJ"
+--thermal.heat_buffer.max_transfer = "1GW"
 thermal.working_light_picture.filename = modname.."/graphics/entity/thermal-generator/reactor-lights-color.png"
 thermal.working_light_picture.hr_version.filename = modname.."/graphics/entity/thermal-generator/hr-reactor-lights-color.png"
 
