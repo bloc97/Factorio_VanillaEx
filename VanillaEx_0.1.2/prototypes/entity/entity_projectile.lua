@@ -138,7 +138,25 @@ entity_projectile[11] = thermonuclear
 
 local nuclear_warhead = util.table.deepcopy(data.raw["artillery-projectile"]["artillery-projectile"])
 nuclear_warhead.name = "atomic-artillery-projectile"
-nuclear_warhead.action.action_delivery.target_effects[1].action = 
+nuclear_warhead.action.action_delivery.target_effects[4].scale = 4
+nuclear_warhead.action.action_delivery.target_effects[1] = 
+          {
+              repeat_count = 100,
+              type = "create-trivial-smoke",
+              smoke_name = "nuclear-smoke",
+              offset_deviation = {{-1, -1}, {1, 1}},
+              slow_down_factor = 1,
+              starting_frame = 3,
+              starting_frame_deviation = 5,
+              starting_frame_speed = 0,
+              starting_frame_speed_deviation = 5,
+              speed_from_center = 0.5,
+              speed_deviation = 0.2
+          }
+table.insert(nuclear_warhead.action.action_delivery.target_effects, 
+		  {
+            type = "nested-result",
+            action =
             {
               type = "area",
               target_entities = false,
@@ -151,7 +169,7 @@ nuclear_warhead.action.action_delivery.target_effects[1].action =
                 starting_speed = 0.5
               }
             }
-nuclear_warhead.action.action_delivery.target_effects[4].scale = 4
+          })
 		  
 entity_projectile[12] = nuclear_warhead
 
