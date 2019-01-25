@@ -6,14 +6,16 @@ local hisolar = util.table.deepcopy(data.raw["solar-panel"]["solar-panel"])
 hisolar.name = "high-density-solar"
 hisolar.icon = iconpath.."high-density-solar.png"
 hisolar.minable.result = "high-density-solar"
-hisolar.picture.filename = modname.."/graphics/entity/solar-panel/dense-solar.png"
+hisolar.picture.layers[1].filename = modname.."/graphics/entity/solar-panel/dense-solar.png"
+hisolar.picture.layers[1].hr_version.filename = modname.."/graphics/entity/solar-panel/hr-dense-solar.png"
 hisolar.production = "120kW"
 
 local stackedsolar = util.table.deepcopy(data.raw["solar-panel"]["solar-panel"])
 stackedsolar.name = "stacked-density-solar"
 stackedsolar.icon = iconpath.."stacked-density-solar.png"
 stackedsolar.minable.result = "stacked-density-solar"
-stackedsolar.picture.filename = modname.."/graphics/entity/solar-panel/stacked-solar.png"
+stackedsolar.picture.layers[1].filename = modname.."/graphics/entity/solar-panel/stacked-solar.png"
+stackedsolar.picture.layers[1].hr_version.filename = modname.."/graphics/entity/solar-panel/hr-stacked-solar.png"
 stackedsolar.production = "240kW"
 
 local hiaccumulator = util.table.deepcopy(data.raw["accumulator"]["accumulator"])
@@ -79,6 +81,7 @@ rtg.picture.filename = modname.."/graphics/entity/basic-accumulator/rtgaccumulat
 
 local lowpowerheatexchanger = util.table.deepcopy(data.raw["boiler"]["heat-exchanger"])
 lowpowerheatexchanger.name = "low-power-heat-exchanger"
+lowpowerheatexchanger.minable.result = "low-power-heat-exchanger"
 lowpowerheatexchanger.energy_consumption = "4.5MW"
 lowpowerheatexchanger.target_temperature = 165
 
@@ -212,7 +215,7 @@ thermal.burner =
       }
     }
 thermal.light = {intensity = 0.8, size = 9.9, shift = {0.0, 0.0}, color = {r = 0.9, g = 0.6, b = 0.2}}
-thermal.heat_buffer.max_temperature = 450
+thermal.heat_buffer.max_temperature = 600
 thermal.heat_buffer.specific_heat = "5MJ"
 --thermal.heat_buffer.max_transfer = "1GW"
 thermal.working_light_picture.filename = modname.."/graphics/entity/thermal-generator/reactor-lights-color.png"
