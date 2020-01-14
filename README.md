@@ -8,3 +8,6 @@ Factorio Mod, Adds a bunch of stuff for vanilla. Balanced. Currently only works 
 ![](https://github.com/bloc97/Factorio_VanillaEx/blob/master/resources/Vehicles.png)
 ![](https://github.com/bloc97/Factorio_VanillaEx/blob/master/resources/Walls.png)
 ![](https://github.com/bloc97/Factorio_VanillaEx/blob/master/resources/Weapons.png)
+
+Outdated Research Preview! (More has been added since)
+![](https://github.com/bloc97/Factorio_VanillaEx/blob/master/resources/research.png)
